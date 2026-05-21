@@ -1160,3 +1160,52 @@ main.container {
         color: #007bff !important; /* Teinte bleue au survol */
     }
 }
+
+
+/* --- CORRECTION DES PRIORITÉS ET DES CLICS SUR MOBILE --- */
+
+/* 1. On force la barre de navigation complète à passer au-dessus de tout le reste */
+nav {
+    position: relative !important;
+    z-index: 99999 !important; 
+}
+
+/* 2. On immunise le bouton hamburger contre les blocages de clics */
+.menu-toggle {
+    position: relative !important;
+    z-index: 100001 !important;
+    pointer-events: auto !important; /* Force le navigateur à capter le clic */
+    cursor: pointer !important;
+}
+
+/* 3. Ajustement du menu déroulant pour mobile */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: flex !important; /* Évite qu'un 'display: none' caché vienne tout bloquer */
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 70px !important; /* Ajustez selon la hauteur de votre nav */
+        right: 20px !important;
+        background-color: #ffffff !important;
+        width: 230px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+        padding: 10px 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
+        
+        /* État masqué par défaut */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-15px) !important;
+        transition: all 0.3s ease-in-out !important;
+        z-index: 100000 !important;
+    }
+
+    /* État affiché lorsque le clic JavaScript ajoute la classe .active */
+    .nav-links.active {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
+    }
+}
