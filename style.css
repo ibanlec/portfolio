@@ -1095,3 +1095,78 @@ img {
 }
 
 
+/* --- MODE TÉLÉPHONE : MENU DÉROULANT --- */
+@media screen and (max-width: 768px) {
+    
+    /* On s'assure que le bouton hamburger est visible */
+    .menu-toggle {
+        display: flex; 
+        flex-direction: column;
+        cursor: pointer;
+        gap: 5px;
+    }
+
+    /* Le menu déroulant (la boîte blanche) */
+    .nav-links {
+        position: absolute;
+        top: 70px; /* Ajustez selon la hauteur de votre barre de navigation */
+        right: 20px; /* Aligné à droite */
+        background-color: white;
+        flex-direction: column;
+        width: 220px;
+        border-radius: 8px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        padding: 5px 0;
+        
+        /* Caché par défaut avec animation */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+        transition: all 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* Quand le JavaScript ajoute la classe .active au clic */
+    .nav-links.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* Style des liens dans le menu déroulant */
+    .nav-links li {
+        width: 100%;
+        list-style: none;
+    }
+
+    .nav-links a {
+        display: flex;
+        align-items: center;
+        padding: 12px 20px;
+        color: #333 !important; /* Texte foncé sur fond blanc */
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+        border-bottom: 1px solid #f0f0f0; /* Ligne de séparation légère */
+        transition: background-color 0.2s;
+    }
+
+    /* Retirer la ligne sous le dernier lien */
+    .nav-links li:last-child a {
+        border-bottom: none;
+    }
+
+    /* Style des icônes */
+    .nav-links a i {
+        margin-right: 12px;
+        width: 20px;
+        text-align: center;
+        color: #555;
+    }
+
+    /* Effet au survol d'un lien */
+    .nav-links a:hover {
+        background-color: #f8f9fa;
+        color: #007bff !important; /* Mettez la couleur principale de votre site ici */
+    }
+}
