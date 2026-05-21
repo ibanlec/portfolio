@@ -1044,129 +1044,119 @@ main.container {
    MEDIA QUERIES - OPTIMISATION MOBILE & TABLETTE
    ========================================================= */
 
-/* Pour les écrans intermédiaires (Tablettes / petits PC - moins de 992px) */
-@media (max-width: 992px) {
-    .hero-content {
-        flex-direction: column-reverse; /* Met la photo au-dessus ou en dessous du texte proprement */
-        text-align: center;
-        gap: 30px;
-    }
-
-    .profile-img {
-        width: 200px; /* Réduit un peu la taille de la photo sur petit écran */
-        height: 200px;
-    }
-
-    .hero-text h1 {
-        font-size: 2.5rem; /* Réduction du titre principal */
-    }
-
-    .hero-btns {
-        justify-content: center; /* Centre les boutons d'action */
-    }
-}
-
-/* Pour les petits écrans (Smartphones - moins de 576px) */
-@media (max-width: 576px) {
-    .hero-text h1 {
-        font-size: 2rem; /* Titre encore plus adapté aux téléphones */
-    }
-
-    .hero-btns {
-        flex-direction: column; /* Aligne les deux boutons l'un sous l'autre */
-        width: 100%;
-        gap: 10px;
-    }
-
-    .hero-btns .btn {
-        width: 100%; /* Les boutons prennent toute la largeur pour être plus cliquables */
-        text-align: center;
-    }
-    
-    .card-body, .path-card {
-        padding: 20px; /* Réduit les marges internes pour gagner de la place */
-    }
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-
-/* --- MODE TÉLÉPHONE : MENU DÉROULANT --- */
+/* --- MODE TÉLÉPHONE : RESET ET SÉCURISATION DU MENU --- */
 @media screen and (max-width: 768px) {
     
-    /* On s'assure que le bouton hamburger est visible */
+    /* On force la barre de navigation à servir de repère pour le menu flottant */
+    nav {
+        position: relative !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 15px 20px !important;
+    }
+
+    /* Configuration complète du bouton hamburger pour s'assurer qu'il est visible */
     .menu-toggle {
-        display: flex; 
-        flex-direction: column;
-        cursor: pointer;
-        gap: 5px;
+        display: flex !important; 
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        width: 30px !important;
+        height: 21px !important;
+        cursor: pointer !important;
+        z-index: 1001 !important;
     }
 
-    /* Le menu déroulant (la boîte blanche) */
+    /* Dessin des 3 lignes du hamburger */
+    .menu-toggle span {
+        display: block !important;
+        width: 100% !important;
+        height: 3px !important;
+        background-color: #ffffff !important; /* Changez par #333 si votre barre de navigation est blanche */
+        border-radius: 3px !important;
+        transition: all 0.3s ease !important;
+    }
+
+    /* Animation du hamburger en croix (X) quand il est ouvert (.active) */
+    .menu-toggle.active span:nth-child(1) {
+        transform: translateY(9px) rotate(45deg) !important;
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg) !important;
+    }
+
+    /* Force le menu déroulant à se comporter comme une boîte verticale isolée */
     .nav-links {
-        position: absolute;
-        top: 70px; /* Ajustez selon la hauteur de votre barre de navigation */
-        right: 20px; /* Aligné à droite */
-        background-color: white;
-        flex-direction: column;
-        width: 220px;
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        padding: 5px 0;
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important; /* Se place pile sous la barre de navigation */
+        right: 20px !important;
+        background-color: #ffffff !important; /* Fond blanc comme sur la maquette */
+        width: 230px !important;
+        border-radius: 8px !important;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+        padding: 8px 0 !important;
+        margin: 0 !important;
+        list-style: none !important;
         
-        /* Caché par défaut avec animation */
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
+        /* État masqué par défaut */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        transform: translateY(-15px) !important;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease !important;
+        z-index: 1000 !important;
     }
 
-    /* Quand le JavaScript ajoute la classe .active au clic */
+    /* État affiché lorsque la classe .active est injectée par votre script.js */
     .nav-links.active {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: translateY(0) !important;
     }
 
-    /* Style des liens dans le menu déroulant */
+    /* Nettoyage des éléments de liste */
     .nav-links li {
-        width: 100%;
-        list-style: none;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
     }
 
+    /* Liens internes du menu déroulant */
     .nav-links a {
-        display: flex;
-        align-items: center;
-        padding: 12px 20px;
-        color: #333 !important; /* Texte foncé sur fond blanc */
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        border-bottom: 1px solid #f0f0f0; /* Ligne de séparation légère */
-        transition: background-color 0.2s;
+        display: flex !important;
+        align-items: center !important;
+        padding: 14px 20px !important;
+        color: #333333 !important; /* Texte sombre sur fond blanc pour le contraste */
+        text-decoration: none !important;
+        font-size: 15px !important;
+        font-weight: 500 !important;
+        border-bottom: 1px solid #f0f0f0 !important;
+        transition: background 0.2s ease, color 0.2s ease !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
     }
 
-    /* Retirer la ligne sous le dernier lien */
+    /* Supprime la bordure de séparation sous le dernier élément (Contact) */
     .nav-links li:last-child a {
-        border-bottom: none;
+        border-bottom: none !important;
     }
 
-    /* Style des icônes */
+    /* Alignement et taille des icônes à gauche du texte */
     .nav-links a i {
-        margin-right: 12px;
-        width: 20px;
-        text-align: center;
-        color: #555;
+        margin-right: 12px !important;
+        width: 20px !important;
+        text-align: center !important;
+        font-size: 16px !important;
+        color: #666666 !important;
     }
 
-    /* Effet au survol d'un lien */
+    /* Effet de survol (hover) sur les options du menu */
     .nav-links a:hover {
-        background-color: #f8f9fa;
-        color: #007bff !important; /* Mettez la couleur principale de votre site ici */
+        background-color: #f8f9fa !important;
+        color: #007bff !important; /* Teinte bleue au survol */
     }
 }
