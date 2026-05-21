@@ -43,7 +43,7 @@
                 <span class="icon">📁</span>
                 <h2>Contexte et Objectifs</h2>
             </div>
-            <div class="card-glass">
+            <div class="path-card">
                 <p>Cette SAÉ consistait à répondre au besoin d'une entreprise souhaitant interconnecter plusieurs services (Administratif, Technique, Direction) tout en garantissant une étanchéité entre les flux de données. L'objectif principal était de concevoir une architecture réseau robuste et de la configurer sur du matériel réel ou simulé (Packet Tracer).</p>
                 
                 <div class="deliverables">
@@ -58,37 +58,41 @@
             </div>
         </section>
 
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
+
         <section class="content-block">
            <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-folder-open" aria-label="Dossier de projet"></i></span>
-                <h2>Contexte et Objectifs</h2>
+                <h2>Topologie & Configuration</h2>
             </div>
-            <div class="visual-grid">
-                <div class="trace-card">
-                    <div class="trace-view">
-                        <div class="img-placeholder">
+            <p style="margin-bottom: 20px; color: #475569;">Aperçu du travail effectué sur l'architecture réseau et la configuration.</p>
+            <div class="project-grid">
+                <div class="card">
+                    <div class="card-header">Topologie Logique</div>
+                    <div class="card-body">
+                        <div class="img-placeholder" style="height: 220px; display:flex; align-items:center; justify-content:center;">
                             <span>[Topologie Packet Tracer]</span>
                         </div>
-                    </div>
-                    <div class="trace-info">
-                        <h3>Topologie Logique</h3>
-                        <p>Mise en place de la hiérarchie réseau avec un routeur de bordure et des switchs de distribution.</p>
+                        <p style="font-size: 0.95rem; margin-top: 18px;">Mise en place de la hiérarchie réseau avec un routeur de bordure et des switchs de distribution.</p>
                     </div>
                 </div>
-
-                <div class="terminal-container">
-                    <div class="terminal-header">
-                        <span class="dot red"></span>
-                        <span class="dot yellow"></span>
-                        <span class="dot green"></span>
-                        <span class="terminal-title">Cisco_Switch_CLI</span>
-                    </div>
-                    <pre class="terminal-body">
-Router(config)# interface g0/0.10
+                <div class="card">
+                    <div class="card-header">Configuration CLI</div>
+                    <div class="card-body">
+                        <div class="terminal-container">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">Cisco_Switch_CLI</span>
+                            </div>
+                            <pre class="terminal-body">Router(config)# interface g0/0.10
 Router(config-subif)# encapsulation dot1Q 10
 Router(config-subif)# ip address 192.168.10.1 255.255.255.0
 Router(config-subif)# no shutdown</pre>
-                    <p class="caption">Configuration du routage inter-VLAN (Router-on-a-stick).</p>
+                        </div>
+                        <p class="caption">Configuration du routage inter-VLAN (Router-on-a-stick).</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -98,28 +102,19 @@ Router(config-subif)# no shutdown</pre>
                 <span class="icon"><i class="fa-solid fa-brain" aria-label="Réflexion et analyse"></i></span>
                 <h2>Analyse Réflexive</h2>
             </div>
-            <div class="analysis-container">
-                <div class="analysis-box">
-                    <h3>Problèmes rencontrés & Solutions</h3>
-                    <p>Lors de la configuration, j'ai rencontré un problème de connectivité entre deux VLANs différents. Après analyse des tables de routage, j'ai réalisé que l'encapsulation sur les sous-interfaces du routeur n'avait pas été correctement définie. <strong>Solution :</strong> J'ai vérifié la correspondance des IDs de VLAN entre le switch (trunk) et le routeur, ce qui a rétabli le trafic.</p>
-                </div>
+            <div class="path-card" style="border-left: 5px solid var(--primary);">
+                <h3>Problèmes rencontrés & Solutions</h3>
+                <p>Lors de la configuration, j'ai rencontré un problème de connectivité entre deux VLANs différents. Après analyse des tables de routage, j'ai réalisé que l'encapsulation sur les sous-interfaces du routeur n'avait pas été correctement définie. <strong>Solution :</strong> J'ai vérifié la correspondance des IDs de VLAN entre le switch (trunk) et le routeur, ce qui a rétabli le trafic.</p>
 
-                <div class="skills-box">
-                    <h3>Apprentissages Critiques (AC)</h3>
-                    <div class="ac-item">
-                        <span class="ac-code">AC11.01</span>
-                        <p>Savoir configurer les équipements de couche 2 et 3.</p>
-                    </div>
-                    <div class="ac-item">
-                        <span class="ac-code">AC11.05</span>
-                        <p>Capacité à questionner un cahier des charges technique.</p>
-                    </div>
-                </div>
+                <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
+                <p>Grâce à ce projet, j'ai pu démontrer les compétences du pôle <strong>RT3 (Développer)</strong> :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 10px;">✅ <strong>AC11.01 :</strong> Savoir configurer les équipements de couche 2 et 3.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC11.05 :</strong> Capacité à questionner un cahier des charges technique.</li>
+                </ul>
 
-                <div class="analysis-box self-eval">
-                    <h3>Auto-évaluation</h3>
-                    <p>Je suis satisfait de la rigueur apportée au plan d'adressage. Cependant, je pense que j'aurais pu optimiser la sécurité en configurant le <em>Port-Security</em> sur les switchs d'accès dès le départ pour prévenir les intrusions physiques.</p>
-                </div>
+                <h3 style="margin-top: 25px;">Auto-évaluation</h3>
+                <p>Je suis satisfait de la rigueur apportée au plan d'adressage. Cependant, je pense que j'aurais pu optimiser la sécurité en configurant le <em>Port-Security</em> sur les switchs d'accès dès le départ pour prévenir les intrusions physiques.</p>
             </div>
         </section>
 

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAÉ 1.04 - Portfolio Iban Leconte</title>
+    <title>SAÉ 1.11 - Portfolio Iban Leconte</title>
     
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
@@ -26,94 +26,89 @@
 
     <header class="sae-hero">
         <div class="container">
-            <span class="badge">Ressource R1.04</span>
-            <h1>SAÉ 1.04 : Création d'un site web dynamique</h1>
+            <span class="badge">Ressource R1.11</span>
+            <h1>SAÉ 1.11 : Sécurisation et audit réseau</h1>
             <div class="tags-container" style="margin-top: 15px;">
-                <span class="tag-pill">HTML5/CSS3</span>
-                <span class="tag-pill">Développement Web</span>
-                <span class="tag-pill">UX Design</span>
-                <span class="tag-pill">Rugby Project</span>
+                <span class="tag-pill">Cybersécurité</span>
+                <span class="tag-pill">Audit</span>
+                <span class="tag-pill">Firewalls</span>
+                <span class="tag-pill">Tests</span>
             </div>
         </div>
     </header>
 
     <main class="container">
-        
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-bullseye" aria-label="Objectif"></i></span>
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                <p>L'objectif de cette SAÉ était de concevoir un site web complet en partant d'un cahier des charges précis. J'ai choisi de travailler sur une thématique qui me tient à cœur : <strong>le Rugby</strong>. Le site devait être ergonomique, visuellement cohérent et techniquement valide selon les standards du W3C.</p>
+                <p>Cette SAÉ portait sur la sécurisation d'une infrastructure réseau et la rédaction d'un audit. Il s'agissait de repérer les failles, proposer des améliorations et vérifier la conformité aux bonnes pratiques.</p>
                 <div class="deliverables">
                     <h4>Compétences visées :</h4>
                     <ul class="check-list">
-                        <li>Structurer du contenu avec un balisage sémantique.</li>
-                        <li>Mettre en œuvre une charte graphique avec CSS.</li>
-                        <li>Assurer l'adaptabilité du site (Responsive Design).</li>
-                        <li>Publier et rendre accessible le site via un hébergement.</li>
+                        <li>Identifier les risques de sécurité.</li>
+                        <li>Configurer des protections réseau.</li>
+                        <li>Rédiger un rapport d'audit.</li>
+                        <li>Proposer des recommandations pratiques.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
-        
+
         <section class="content-block">
             <div class="block-header">
-                <span class="icon"><i class="fa-solid fa-laptop-code" aria-label="Réalisations techniques"></i></span>
+                <span class="icon"><i class="fa-solid fa-shield-halved" aria-label="Réalisations techniques"></i></span>
                 <h2>Réalisations techniques</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Aperçu du travail effectué sur le site de Rugby :</p>
+            <p style="margin-bottom: 20px; color: #475569;">Observations, protections et bonnes pratiques mises en place.</p>
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">Interface Utilisateur</div>
+                    <div class="card-header">Analyse de vulnérabilités</div>
                     <div class="card-body">
                         <div style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
-                            <p style="color: var(--primary); font-size: 0.8rem;">[Capture d'écran du site Rugby-Site1]</p>
+                            <p style="color: var(--primary); font-size: 0.8rem;">[Rapport d'audit]</p>
                         </div>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Mise en page utilisant Flexbox pour aligner les articles et les scores de matchs.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Évaluation des points faibles et recommandations de sécurisation du réseau.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header">Structure CSS Responsive</div>
+                    <div class="card-header">Actions de remédiation</div>
                     <div class="card-body">
                         <pre style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
-@media (max-width: 768px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-}
+iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables -A INPUT -j DROP
                         </pre>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Utilisation des Media Queries pour garantir une consultation optimale sur mobile.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Mise en place de règles pour protéger les accès critiques et limiter les surfaces d'attaque.</p>
                     </div>
                 </div>
             </div>
         </section>
 
         <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
-        
+
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-lightbulb" aria-label="Analyse réflexive"></i></span>
                 <h2>Analyse Réflexive</h2>
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
-                
                 <h3>Difficultés rencontrées & Solutions</h3>
-                <p>La gestion du positionnement des éléments complexes (comme le menu de navigation et les cartes de joueurs) a été un défi. Au début, j'utilisais des marges fixes qui cassaient le design sur petit écran. <strong>Solution :</strong> J'ai appris à utiliser <em>CSS Flexbox</em> et les unités relatives (%), ce qui a rendu le site beaucoup plus flexible et moderne.</p>
+                <p>La difficulté principale a été de prioriser les risques en fonction du budget et des besoins de l'entreprise. <strong>Solution :</strong> j'ai utilisé une grille de criticité pour classer les actions et proposer une mise en œuvre progressive.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
-                <p>Grâce à ce projet, j'ai pu démontrer les compétences du pôle <strong>RT3 (Développer)</strong> :</p>
+                <p>Ce projet m'a permis de consolider ma compréhension de la sécurité réseau :</p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC23.02 :</strong> Développer une application à partir d'un cahier des charges (Web).</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC23.05 :</strong> Accéder à un ensemble de données (via l'intégration de contenu dynamique).</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC14.02 :</strong> Identifier les vulnérabilités et proposer des solutions.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC14.06 :</strong> Mettre en place des protections réseau efficaces.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Le point fort de mon site est son graphisme épuré et sa facilité de navigation. Pour une prochaine étape, j'aimerais intégrer du JavaScript pour rendre les tableaux de scores interactifs avec des mises à jour en temps réel.</p>
+                <p>Je suis content de l'approche structurée adoptée pour cet audit. À l'avenir, j'aimerais automatiser davantage la détection des anomalies avec des outils de monitoring.</p>
             </div>
         </section>
 
@@ -132,5 +127,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
