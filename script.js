@@ -16,6 +16,27 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuToggle.classList.remove('active');
             });
         });
+
+        // Play video on hover (desktop) and toggle on tap (mobile)
+        document.querySelectorAll('video.project-video').forEach(video => {
+            // Ensure muted so autoplay on hover is allowed
+            video.muted = true;
+
+            video.addEventListener('mouseenter', () => {
+                // try/catch for browsers that block play
+                video.play().catch(() => {});
+            });
+
+            video.addEventListener('mouseleave', () => {
+                try { video.pause(); video.currentTime = 0; } catch(e) {}
+            });
+
+            // On mobile, allow tap to toggle play/pause
+            video.addEventListener('click', () => {
+                if (video.paused) { video.play().catch(() => {}); }
+                else { video.pause(); }
+            });
+        });
     }
 });
 
