@@ -1271,3 +1271,146 @@ pre::-webkit-scrollbar-thumb, .terminal-body pre::-webkit-scrollbar-thumb {
     background: rgba(99,102,241,0.25);
     border-radius: 8px;
 }
+
+/* Conteneurs d'images responsive et défilables */
+.image-container {
+    height: 450px;
+    width: 100%;
+    border: 2px dashed var(--primary);
+    border-radius: 8px;
+    overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f0f4f8;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.image-container img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    padding: 0;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    min-height: 100%;
+}
+
+.image-gallery img {
+    flex: 0 0 auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.image-container p {
+    color: var(--primary);
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Scrollbar personnalisée pour les images */
+.image-container::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.image-container::-webkit-scrollbar-track {
+    background: rgba(99,102,241,0.1);
+    border-radius: 8px;
+}
+
+.image-container::-webkit-scrollbar-thumb {
+    background: rgba(99,102,241,0.35);
+    border-radius: 8px;
+}
+
+.image-container::-webkit-scrollbar-thumb:hover {
+    background: rgba(99,102,241,0.5);
+}
+
+
+/* ==========================================================================
+   CORRECTION FINALE : Gestion des images (PC & Mobile)
+   ========================================================================== */
+
+/* 1. Nettoyage du conteneur global */
+.image-container {
+    width: 100%;
+    height: auto;          /* On retire la hauteur fixe de 450px qui bloquait tout */
+    max-height: none;      /* Supprime les limitations */
+    border: none;          /* Retire les pointillés si tu n'en veux plus */
+    overflow: visible;     /* Laisse respirer le layout */
+    background: transparent;
+    display: block;        /* Sort du mode flex pour le conteneur parent */
+    padding: 0;
+    margin-bottom: 15px;
+}
+
+/* 2. Comportement pour la Vue PC (Desktop) */
+.image-container p {
+    display: flex !important;
+    flex-direction: column !important; /* Force l'empilement vertical */
+    gap: 20px !important;              /* Espace propre entre les deux captures */
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+.image-container img {
+    width: 100% !important;       /* Rempli complètement la largeur du cadre */
+    height: auto !important;      /* Garde le ratio d'aspect d'origine pour ne pas écraser l'interface */
+    max-height: 400px;            /* Limite la hauteur pour éviter que la carte soit infinie, ajustable */
+    object-fit: cover !important; /* Rempli le cadre proprement s'il y a une limite */
+    display: block !important;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Petite ombre pour décoller l'image */
+}
+
+/* ==========================================================================
+   ALIGNEMENT CÔTE À CÔTE ET AGRANDISSEMENT (Vue Smartphone)
+   ========================================================================== */
+
+/* 1. Conteneur de la Vue Mobile : on garde le côte à côte */
+.project-grid .card:nth-child(2) .image-container p {
+    display: flex !important;
+    flex-direction: row !important;     /* Aligne les deux images sur la même ligne */
+    justify-content: space-between !important; /* Les sépare pour occuper tout l'espace */
+    gap: 15px !important;               /* Espace entre les deux téléphones */
+    margin: 0 !important;
+    width: 100% !important;
+}
+
+/* 2. Images de la Vue Mobile : on les agrandit au maximum */
+.project-grid .card:nth-child(2) .image-container img {
+    width: 48% !important;              /* Prend quasiment la moitié de la carte chacune */
+    max-width: none !important;         /* On fait sauter la limite pour qu'elles grandissent */
+    height: auto !important;            /* Laisse la hauteur s'adapter proportionnellement */
+    object-fit: contain !important;     /* Conserve l'intégralité de la capture sans coupure */
+    display: block !important;
+    border-radius: 8px;
+}
+
+/* 3. Nettoyage final des conteneurs pour enlever les pointillés bleus et les fonds bizarres */
+.project-grid .card:nth-child(1) .image-container,
+.project-grid .card:nth-child(2) .image-container {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Optionnel : Si jamais tu réduis la fenêtre du navigateur (ou sur tablette), 
+   on s'assure que ça reste propre */
+@media screen and (max-width: 900px) {
+    .project-grid .card:nth-child(2) .image-container p {
+        gap: 10px !important;
+    }
+}

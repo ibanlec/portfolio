@@ -85,8 +85,9 @@
                 <div class="card">
                     <div class="card-header">Vue Ordinateur (Desktop)</div>
                     <div class="card-body">
-                        <div style="background: #f0f4f8; border: 2px dashed var(--primary); height: 300px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: var(--primary); font-size: 0.9rem;">📷 Remplacez cette zone par une capture d'écran du site en version desktop<br><small>(drag & drop ou lien image)</small></p>
+                        <div class="image-container">
+                            <p><img src="pc1.png" alt="">
+                            <img src="pc2.png" alt=""></p>
                         </div>
                         <p style="font-size: 0.9rem; color: #666;">Affichage sur écran large (1024px+) : navigation fluide, cartes en grille, contenu bien espacé.</p>
                     </div>
@@ -94,8 +95,9 @@
                 <div class="card">
                     <div class="card-header">Vue Mobile (Smartphone)</div>
                     <div class="card-body">
-                        <div style="background: #f0f4f8; border: 2px dashed var(--primary); height: 300px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: var(--primary); font-size: 0.9rem;">📱 Remplacez cette zone par une capture d'écran du site en version mobile<br><small>(drag & drop ou lien image)</small></p>
+                        <div class="image-container">
+                            <p><img src="tel1.png" alt="">
+                            <img src="tel2.png" alt=""></p>
                         </div>
                         <p style="font-size: 0.9rem; color: #666;">Affichage sur petit écran (< 600px) : navigation optimisée, colonnes empilées, interface tactile.</p>
                     </div>
@@ -409,15 +411,15 @@
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Difficultés rencontrées & solutions apportées</h3>
                 
-                <h4 style="color: var(--primary); margin-top: 15px;">1. Maîtrise du Responsive Design</h4>
-                <p><strong>Défi :</strong> Initialement, j'utilisais des marges et paddings fixes, ce qui provoquait des débordements et une mauvaise lisibilité sur petits écrans. Le positionnement d'éléments complexes (menu, cartes de joueurs, tableaux de scores) était rigide.</p>
-                <p><strong>Solution adoptée :</strong> J'ai migré vers <strong>Flexbox</strong> et les unités relatives (%, vh, vw). Mise en place de 5 media queries stratégiques (1024px, 768px, 600px, 480px, 360px) permettant un redimensionnement fluide. Apprentissage de la propriété <code>clamp()</code> pour les espacements adaptatifs.</p>
-                <p><strong>Résultat :</strong> Le site fonctionne maintenant sur tous les appareils sans décalages visuels.</p>
+                <h4 style="color: var(--primary); margin-top: 15px;">1. Accessibilité WCAG 2.0 AA</h4>
+                <p><strong>Défi :</strong> Assurer la conformité WCAG 2.0 AA s'avérait complexe. Le contraste des couleurs était insuffisant (< 4.5:1), les éléments interactifs manquaient d'attributs <code>aria-label</code>, et la navigation au clavier était défaillante sur certains éléments.</p>
+                <p><strong>Solution adoptée :</strong> Audit de l'accessibilité avec des outils comme WAVE. Augmentation du ratio de contraste (noir/blanc ≥ 4.5:1). Ajout systématique d'attributs <code>aria-label</code> sur les icônes et éléments interactifs. Implémentation de la navigation au clavier (tabindex, focus visible). Vérification de la lisibilité des formulaires et des appels à l'action.</p>
+                <p><strong>Résultat :</strong> Site conforme WCAG 2.0 AA, accessible aux utilisateurs en situation de handicap (malvoyants, utilisateurs au clavier).</p>
 
-                <h4 style="color: var(--primary); margin-top: 15px;">2. Validation W3C & Standards du web</h4>
+                <h4 style="color: var(--primary); margin-top: 15px;">2. Validation W3C & Structure sémantique</h4>
                 <p><strong>Défi :</strong> Respecter les normes W3C en HTML/CSS demandait une attention particulière à la sémantique, l'utilisation correcte des balises et l'absence de propriétés obsolètes.</p>
-                <p><strong>Solution adoptée :</strong> Utilisation systématique d'éléments sémantiques (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>). Vérification du code avec le validateur W3C à chaque étape. Intégration des critères d'accessibilité WCAG 2.0 AA (contraste de couleurs ≥ 4.5:1, attributs <code>aria-label</code>, navigation au clavier).</p>
-                <p><strong>Résultat :</strong> Code validé W3C sans erreur ; site conforme aux standards d'accessibilité.</p>
+                <p><strong>Solution adoptée :</strong> Utilisation systématique d'éléments sémantiques (<code>&lt;header&gt;</code>, <code>&lt;nav&gt;</code>, <code>&lt;section&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;footer&gt;</code>). Vérification du code avec le validateur W3C à chaque étape. Respect de la hiérarchie des titres (h1→h6).</p>
+                <p><strong>Résultat :</strong> Code validé W3C sans erreur ; structure logique et maintenable.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) démontrés</h3>
                 <p>Ce projet a permis de valider les apprentissages du pôle <strong>RT3 (Développer)</strong> :</p>
@@ -450,44 +452,44 @@
             
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">❌ Problème : Responsive cassé (avant)</div>
+                    <div class="card-header">❌ Problèmes WCAG 2.0 AA (avant)</div>
                     <div class="card-body">
-                        <div style="background: #ffe6e6; border: 2px dashed #d32f2f; height: 250px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: #d32f2f; font-size: 0.9rem;">📸 Capture d'écran montrant le problème de responsive<br><small>(marges fixes, débordements, éléments qui chevauchent)</small></p>
+                        <div class="image-container">
+                            <img src="probleme_WCAG.png" alt="Rapport WAVE avant - problèmes d'accessibilité">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Utilisation de marges/paddings fixes sans media queries. Le site affichait mal sur petits écrans.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Contraste de couleurs < 4.5:1, attributs aria manquants, éléments non accessibles au clavier.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">✅ Solution : Responsive réparé (après)</div>
+                    <div class="card-header">✅ Conformité WCAG 2.0 AA (après)</div>
                     <div class="card-body">
-                        <div style="background: #e6ffe6; border: 2px dashed #2e7d32; height: 250px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: #2e7d32; font-size: 0.9rem;">📸 Capture d'écran montrant le responsive corrigé<br><small>(éléments bien espacés, adaptation fluide)</small></p>
+                        <div class="image-container">
+                            <img src="resolu.png" alt="Rapport WAVE après - conformité WCAG réussie">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Flexbox + media queries + unités relatives. Vérification sur 5 points de rupture.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Respect du ratio de contraste, ajout d'attributs aria, navigation au clavier fonctionnelle.</p>
                     </div>
                 </div>
             </div>
 
             <div class="project-grid" style="margin-top: 30px;">
                 <div class="card">
-                    <div class="card-header">❌ Erreurs W3C (avant validation)</div>
+                    <div class="card-header">❌ Problème Responsive (avant)</div>
                     <div class="card-body">
-                        <div style="background: #fff3e0; border: 2px dashed #f57c00; height: 250px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: #f57c00; font-size: 0.9rem;">📋 Capture du rapport W3C avec les erreurs<br><small>(balises mal fermées, nesting incorrect, dépréciation CSS)</small></p>
+                        <div class="image-container">
+                            <img src="probleme_responsive.png" alt="Capture avant correction responsive montrant débordements et chevauchement">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Problèmes identifiés :</strong> Code non-sémantique, propriétés CSS obsolètes, structure mal hiérarchisée.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Utilisation de marges et paddings fixes, pas de media queries. Site illisible sur mobile.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">✅ Code validé W3C (après correction)</div>
+                    <div class="card-header">✅ Responsive corrigé (après)</div>
                     <div class="card-body">
-                        <div style="background: #e3f2fd; border: 2px dashed #1976d2; height: 250px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px; margin-bottom: 10px;">
-                            <p style="color: #1976d2; font-size: 0.9rem;">✔️ Capture du rapport W3C (zéro erreur)<br><small>(validation réussie, sémantique respectée, WCAG AA)</small></p>
+                        <div class="image-container">
+                            <img src="responsive_resol.png" alt="Capture après correction responsive montrant adaptation fluide">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Corrections apportées :</strong> Code sémantique, standards W3C respectés, accessibilité WCAG 2.0 AA.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Flexbox + unités relatives + 5 media queries. Site fonctionnel sur tous les appareils.</p>
                     </div>
                 </div>
             </div>
