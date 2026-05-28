@@ -33,9 +33,9 @@
             <h1>SAÉ 1.05 : Automatisation d'un flux de données</h1>
             <div class="tags-container" style="margin-top: 15px;">
                 <span class="tag-pill">Python</span>
-                <span class="tag-pill">Automatisation</span>
-                <span class="tag-pill">CSV</span>
-                <span class="tag-pill">Qualité</span>
+                <span class="tag-pill">API REST</span>
+                <span class="tag-pill">JSON</span>
+                <span class="tag-pill">Automation</span>
             </div>
         </div>
     </header>
@@ -102,9 +102,6 @@
 
                 <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3.
                     Analyseur de zones géographiques et statistiques (infos_locales.py)</h4>
-
-                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3.
-                    Analyseur de zones géographiques et statistiques (infos_locales.py)</h4>
                 <ul style="list-style: none; padding-left: 0;">
                     <li><strong>Extraction de masse :</strong> Utilisation de l'API <strong>Overpass</strong> et du
                         langage de requêtage <strong>Overpass QL</strong> pour extraire massivement un ensemble d'objets
@@ -140,10 +137,7 @@
                     qu'une <strong>soutenance orale</strong> visant à valider la maîtrise et la compréhension complète
                     des scripts développés.</p>
                 <div class="deliverables">
-
-                    <ul class="check-list">
-
-                    </ul>
+                    <ul class="check-list"></ul>
                 </div>
             </div>
         </section>
@@ -153,37 +147,48 @@
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-laptop-code" aria-label="Réalisations techniques"></i></span>
-                <h2>Réalisations techniques</h2>
+                <h2>Réalisations techniques & Intégration des API</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Aperçu de la solution automatisée et des résultats obtenus.
-            </p>
+            <p style="margin-bottom: 20px; color: #475569;">Découverte et exploitation des interfaces de programmation (API) pour la collecte automatique de données géographiques :</p>
+            
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">Pipeline de données</div>
+                    <div class="card-header">1. Requêtage Ciblé : API OpenStreetMap</div>
                     <div class="card-body">
-                        <div
-                            style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
-                            <p style="color: var(--primary); font-size: 0.8rem;">[Schéma du flux ETL]</p>
-                        </div>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Création d'un pipeline qui nettoie, transforme
-                            et agrège les données selon le cahier des charges.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 12px;"><strong>Principe :</strong> Utilisée dans <code>fiche_osm.py</code>, cette API permet d'interroger directement la base de données d'OpenStreetMap pour récupérer toutes les informations d'un point précis (nom, téléphone, horaires) à partir de son identifiant unique.</p>
+                        <pre style="background: #1a1a1a; color: #ff79c6; padding: 12px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+def get_node(id: int) -> dict:
+    url = f"https://www.openstreetmap.org/api/0.6/node/{id}.json"
+    rep = requests.get(url)
+    if rep.status_code == 200:
+        return rep.json()['elements'][0]
+    return None
+                        </pre>
+                        <p style="font-size: 0.85rem; color: #555; margin-top: 10px;"><strong>Explication du code :</strong> Le script construit l'adresse de requête en y insérant l'identifiant recherché. La fonction <code>requests.get()</code> interroge le serveur distant. Si le serveur répond positivement (code de succès 200), le résultat est directement extrait et converti en dictionnaire Python exploitable.</p>
                     </div>
                 </div>
+
                 <div class="card">
-                    <div class="card-header">Validation & Exports</div>
+                    <div class="card-header">2. Extraction de Masse : API Overpass</div>
                     <div class="card-body">
-                        <pre
-                            style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
-python process_data.py --input data.csv --output report.xlsx
+                        <p style="font-size: 0.9rem; margin-bottom: 12px;"><strong>Principe :</strong> Utilisée dans <code>projet.py</code>, l'API Overpass permet d'extraire massivement un ensemble de données sur toute une région en utilisant le langage de requête Overpass QL (ex: cibler toutes les bornes de recharge de Normandie).</p>
+                        <pre style="background: #1a1a1a; color: #ff79c6; padding: 12px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: monospace;">
+def get_dataset(query: str) -> dict:
+    while True:
+        try:
+            reponse = requests.get(url, params={"data": query}, timeout=30)
+            if reponse.status_code == 200:
+                return reponse.json()
+        except:
+            pass
+        time.sleep(2)
                         </pre>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Génération de résultats exploitables et d'un
-                            rapport final automatisé.</p>
+                        <p style="font-size: 0.85rem; color: #555; margin-top: 10px;"><strong>Explication du code :</strong> L'extraction de masse pouvant surcharger le serveur ou couper à cause d'un timeout, j'ai mis en place une boucle de sécurité <code>while True</code>. Si la connexion échoue, le script intercepte l'erreur proprement, attend 2 secondes avec <code>time.sleep(2)</code>, puis réessaye automatiquement jusqu'à récupérer les données.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
         <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
 
         <section class="content-block">
@@ -192,34 +197,56 @@ python process_data.py --input data.csv --output report.xlsx
                         aria-label="Preuves des difficultés"></i></span>
                 <h2>Preuves des difficultés rencontrées</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Documentation des audits et des vulnérabilités identifiées
-                lors du CTF :</p>
+            <p style="margin-bottom: 20px; color: #475569;">Documentation des tests et des blocages de requêtes lors de la liaison avec le serveur distant :</p>
 
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">❌ Identification des failles (Avant)</div>
+                    <div class="card-header">❌ Échec de liaison avec l'API (Avant)</div>
                     <div class="card-body">
-                        <div class="image-container">
-                            <!-- Référence à l'image du dictionnaire de mots de passe ou failles ANSSI -->
-                            <img src="image_e5494e.png" alt="Brouillon et notes sur les lots de la SAÉ 1.01">
+                        <div class="terminal-container" style="margin-bottom: 15px;">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">Python_API_Error</span>
+                            </div>
+                            <pre class="terminal-body" style="background: #10121b; padding: 15px; color: #ff5555; font-family: monospace; font-size: 0.8rem;">
+>>> import requests
+>>> response = requests.get("https://api.openstreetmap.org/node/...")
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+! Erreur : Le serveur renvoie du HTML/XML brut au lieu du JSON attendu
+                            </pre>
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Analyse des risques et
-                            répartition des lots de l'infrastructure de Jean Boomer avant sécurisation.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Mauvaise liaison de l'API dans le code. Le script n'envoyait pas le bon format de requête et plantait en essayant de lire la réponse du serveur.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">✅ Audit et remédiation (Après)</div>
+                    <div class="card-header">✅ Requête API connectée et stable (Après)</div>
                     <div class="card-body">
-                        <div class="image-container">
-                            <img src="resolu.png" alt="Rapport de réussite ou preuve de sécurisation">
+                        <div class="terminal-container" style="margin-bottom: 15px;">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">Python_API_Success</span>
+                            </div>
+                            <pre class="terminal-body" style="background: #10121b; padding: 15px; color: #55ff55; font-family: monospace; font-size: 0.8rem;">
+>>> url = "https://api.openstreetmap.org/api/0.6/node/5553036408.json"
+>>> response = requests.get(url)
+>>> print(response.status_code)
+200
+>>> data = response.json()  # Extraction reussie !
+                            </pre>
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Application des règles
-                            de durcissement de l'ANSSI sur la politique de mots de passe.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Utilisation de l'URL correcte avec l'extension `.json` demandée par l'API et ajout de vérifications de sécurité dans le code Python.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
+
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-lightbulb" aria-label="Analyse réflexive"></i></span>
@@ -227,24 +254,21 @@ python process_data.py --input data.csv --output report.xlsx
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Difficultés rencontrées & Solutions</h3>
-                <p>J'ai d'abord eu du mal à harmoniser les différentes structures de fichiers sources. <strong>Solution
-                        :</strong> j'ai mis en place un script de normalisation et une validation automatique des
-                    formats.</p>
+                
+                <h4 style="color: var(--primary); margin-top: 15px;">Lier et faire communiquer l'API avec notre code Python</h4>
+                <p><strong>Le problème :</strong> Notre plus grosse difficulté a été de connecter proprement l'API OpenStreetMap avec notre code Python. Au début, nos requêtes n'aboutissaient pas ou le script plantait complètement en se bloquant. On a réalisé que l'API renvoyait par défaut des données brutes au format XML, alors que notre programme Python était configuré pour trier et lire des structures au format JSON. Le code n'arrivait pas à faire la liaison et générait des erreurs de décodage.</p>
+                
+                <p><strong>Notre solution :</strong> Pour résoudre ce problème, nous avons utilisé la bibliothèque Python <code>requests</code>. Nous avons modifié l'URL de requêtage pour forcer l'API à nous envoyer directement du JSON (en ajoutant l'extension <code>.json</code> à la fin de l'identifiant du nœud). Ensuite, nous avons sécurisé la liaison en ajoutant un test de contrôle (<code>if response.status_code == 200</code>) pour vérifier que le serveur répond correctement avant de lancer l'extraction des données avec <code>response.json()</code>.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
-                <p>Ce projet m'a permis de renforcer mon savoir-faire sur l'automatisation et la fiabilité des données :
-                </p>
+                <p>Ce projet m'a permis de renforcer mon savoir-faire sur l'automatisation et la fiabilité des données :</p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC12.03 :</strong> Développer une solution logicielle
-                        automatisée.</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC12.07 :</strong> Assurer la qualité des données et la
-                        conformité.</li>
+                    <li style="margin-bottom: 10px;">¼ ✅ <strong>AC12.03 :</strong> Développer une solution logicielle automatisée (en Python).</li>
+                    <li style="margin-bottom: 10px;">¼ ✅ <strong>AC12.07 :</strong> Assurer la qualité des données collectées et la conformité des formats.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Le principal point fort est l'automatisation du processus, qui réduit les erreurs manuelles. Pour une
-                    prochaine étape, je souhaite ajouter une interface de suivi pour visualiser l'état des traitements.
-                </p>
+                <p>Le principal point fort est l'automatisation complète du processus, de la requête réseau jusqu'à la création finale du fichier HTML, ce qui élimine les erreurs de saisie manuelle. Pour une prochaine étape, je souhaite ajouter une petite interface graphique ou de suivi pour visualiser l'état des traitements en temps réel.</p>
             </div>
         </section>
 
