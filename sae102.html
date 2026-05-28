@@ -33,7 +33,7 @@
             <div class="tags-container">
                 <span class="tag-pill">Cisco IOS</span>
                 <span class="tag-pill">VLANs</span>
-                <span class="tag-pill">VLSM</span>
+                <span class="tag-pill">SSH</span>
                 <span class="tag-pill">Sécurité</span>
             </div>
         </div>
@@ -46,81 +46,50 @@
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
-                <p>Réalisée au premier semestre au département <strong>Réseaux et Télécommunications</strong> de
-                    l'IUT de Caen, la <strong>SAÉ 1.02</strong> propose une mise en situation complète pour
-                    concevoir et déployer un <strong>réseau local d'entreprise (LAN)</strong>. Mené en équipes de
-                    quatre, le projet vise à bâtir une infrastructure <strong>stable</strong>,
-                    <strong>ségrisée</strong> et <strong>fonctionnelle</strong> en respectant un cahier des charges
-                    professionnel.
-                </p>
+                    <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
+                    <p>Réalisée au premier semestre au département <strong>Réseaux et Télécommunications</strong> de l'IUT de Caen, la <strong>SAÉ 1.02</strong> propose une mise en situation complète pour concevoir et déployer un <strong>réseau local d'entreprise (LAN)</strong>. Mené en équipes de quatre, le projet vise à bâtir une infrastructure <strong>stable</strong>, <strong>sécurisée</strong> et <strong>fonctionnelle</strong> en respectant un cahier des charges professionnel.</p>
 
-                <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Architecture technique
-                    & manipulations</h3>
-                <p>Le projet combinait l'interconnexion d'équipements Cisco physiques et le déploiement
-                    d'environnements virtualisés (Proxmox) pour héberger des services essentiels.</p>
+                    <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Architecture technique & manipulations</h3>
+                    <p>Le projet combinait l'interconnexion d'équipements Cisco physiques et le déploiement d'environnements virtualisés (Proxmox) pour héberger des services essentiels.</p>
 
-                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">1.
-                    Configuration et ingénierie réseau</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Plan d'adressage IP :</strong> Conception et déploiement d'un plan IPv4 (adresses
-                        fixes et DHCP) adapté à la segmentation par VLAN.</li>
-                    <li style="margin-top: 8px;"><strong>Matériel Cisco :</strong> Configuration CLI de commutateurs
-                        de niveau 2 (Cisco 2960), commutateur de niveau 3 (Cisco 3560) et routeur LAN/WAN (Cisco
-                        2911).</li>
-                    <li style="margin-top: 8px;"><strong>Protocoles :</strong> RSTP, EtherChannel, segmentation par
-                        VLAN (Data / Management) et routage inter-VLAN.</li>
-                </ul>
-
-                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">2.
-                    Sécurisation des commutateurs (Switch Hardening)</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Protection contre les tempêtes de diffusion :</strong> Mise en place de mécanismes
-                        limitant les broadcast storms.</li>
-                    <li style="margin-top: 8px;"><strong>Prévention du MAC Flooding :</strong> Limitation et
-                        surveillance du remplissage de la table CAM.</li>
-                    <li style="margin-top: 8px;"><strong>Sécurisation des ports d'accès :</strong> Politiques pour
-                        empêcher les connexions non autorisées (Port-Security, VLAN access control).</li>
-                </ul>
-
-                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">3.
-                    Déploiement système & services (Virtualisation)</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Infrastructure Proxmox :</strong> Installation d'une VM Debian (disques multiples,
-                        interfaces réseau) sur la baie de serveurs configurée en cluster.</li>
-                    <li style="margin-top: 8px;"><strong>Services applicatifs :</strong> Déploiement et
-                        administration de serveur Web, FTP, TFTP et DNS cache.</li>
-                    <li style="margin-top: 8px;"><strong>Accès sécurisés :</strong> Configuration SSH
-                        (authentification par mot de passe puis par clés asymétriques pour les accès critiques).
-                    </li>
-                </ul>
-
-                <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Organisation et
-                    livrables attendus</h3>
-                <p>Travail collaboratif et documentation : rédaction de notices techniques partagées, respect des
-                    procédures d'exploitation (quorum cluster, extinction ordonnée) et évaluations de groupe
-                    complétées par des contrôles individuels (QCM).</p>
-
-                <h3 style="margin-top: 22px;">Ressources et compétences mobilisées</h3>
-                <p>Cette SAÉ mobilise plusieurs compétences du tronc commun :</p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 8px;"><strong>R1.07 :</strong> Fondamentaux de la programmation —
-                        automatisation et scripts d'assistance.</li>
-                    <li style="margin-bottom: 8px;"><strong>R1.08 :</strong> Bases des systèmes d'exploitation —
-                        gestion des VM et fichiers de configuration.</li>
-                    <li style="margin-bottom: 8px;"><strong>R1.11 :</strong> Expression & communication — rédaction
-                        professionnelle des rapports techniques.</li>
-                </ul>
-
-                <div class="deliverables">
-                    <ul class="check-list">
-
+                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">1. Configuration et ingénierie réseau</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><strong>Plan d'adressage IP :</strong> Conception et déploiement d'un plan IPv4 (adresses fixes et DHCP) adapté à la segmentation par VLAN.</li>
+                        <li style="margin-top: 8px;"><strong>Matériel Cisco :</strong> Configuration CLI de commutateurs de niveau 2 (Cisco 2960), commutateur de niveau 3 (Cisco 3560) and routeur LAN/WAN (Cisco 2911).</li>
+                        <li style="margin-top: 8px;"><strong>Protocoles :</strong> RSTP, EtherChannel, segmentation par VLAN (Data / Management) and routage inter-VLAN.</li>
                     </ul>
+
+                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">2. Sécurisation des commutateurs (Switch Hardening)</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><strong>Protection contre les tempêtes de diffusion :</strong> Mise en place de mécanismes limitant les broadcast storms.</li>
+                        <li style="margin-top: 8px;"><strong>Prévention du MAC Flooding :</strong> Limitation et surveillance du remplissage de la table CAM.</li>
+                        <li style="margin-top: 8px;"><strong>Sécurisation des ports d'accès :</strong> Politiques pour empêcher les connexions non autorisées (Port-Security).</li>
+                    </ul>
+
+                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">3. Déploiement système & services (Virtualisation)</h4>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li><strong>Infrastructure Proxmox :</strong> Installation d'une VM Debian (disques multiples, interfaces réseau) sur la baie de serveurs configurée en cluster.</li>
+                        <li style="margin-top: 8px;"><strong>Services applicatifs :</strong> Déploiement et administration de serveur Web, FTP, TFTP et DNS cache.</li>
+                        <li style="margin-top: 8px;"><strong>Accès sécurisés :</strong> Configuration SSH (authentification par mot de passe puis par clés asymétriques).</li>
+                    </ul>
+
+                    <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Organisation et livrables attendus</h3>
+                    <p>Travail collectif et documentation : rédaction de notices techniques partagées, respect des procédures d'exploitation (quorum cluster, extinction ordonnée) and évaluations de groupe complétées par des contrôles individuels (QCM).</p>
+
+                    <h3 style="margin-top: 22px;">Ressources et compétences mobilisées</h3>
+                    <p>Cette SAÉ mobilise plusieurs compétences du tronc commun :</p>
+                    <ul style="list-style: none; padding-left: 0;">
+                        <li style="margin-bottom: 8px;"><strong>R1.07 :</strong> Fondamentaux de la programmation — automatisation et scripts d'assistance.</li>
+                        <li style="margin-bottom: 8px;"><strong>R1.08 :</strong> Bases des systèmes d'exploitation — gestion des VM et fichiers de configuration.</li>
+                        <li style="margin-bottom: 8px;"><strong>R1.11 :</strong> Expression & communication — rédaction professionnelle des rapports techniques.</li>
+                    </ul>
+
+                    <div class="deliverables">
+                        <ul class="check-list"></ul>
+                    </div>
                 </div>
             </div>
-            </div>
-            <p style="margin-bottom: 20px; color: #475569;">Aperçu du travail effectué sur l'architecture réseau et la
-                configuration.</p>
+            <p style="margin-bottom: 20px; color: #475569;">Aperçu du travail effectué sur l'architecture réseau et la configuration.</p>
             <div class="project-grid">
                 <div class="card">
                     <div class="card-header">Topologie Logique</div>
@@ -129,8 +98,7 @@
                             style="height: 220px; display:flex; align-items:center; justify-content:center;">
                             <span>[Topologie Packet Tracer]</span>
                         </div>
-                        <p style="font-size: 0.95rem; margin-top: 18px;">Mise en place de la hiérarchie réseau avec un
-                            routeur de bordure et des switchs de distribution.</p>
+                        <p style="font-size: 0.95rem; margin-top: 18px;">Mise en place de la hiérarchie réseau avec un routeur de bordure et des switchs de distribution.</p>
                     </div>
                 </div>
                 <div class="card">
@@ -153,42 +121,93 @@ Router(config-subif)# no shutdown</pre>
                 </div>
             </div>
         </section>
+
         <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
 
         <section class="content-block">
             <div class="block-header">
-                <span class="icon"><i class="fa-solid fa-exclamation-triangle"
-                        aria-label="Preuves des difficultés"></i></span>
+                <span class="icon"><i class="fa-solid fa-exclamation-triangle" aria-label="Preuves des difficultés"></i></span>
                 <h2>Preuves des difficultés rencontrées</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Documentation des audits et des vulnérabilités identifiées
-                lors du CTF :</p>
+            <p style="margin-bottom: 20px; color: #475569;">Documentation visuelle des erreurs bloquantes survenues pendant le câblage et la configuration :</p>
 
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">❌ Identification des failles (Avant)</div>
+                    <div class="card-header">❌ Blocage de la connexion SSH (Avant)</div>
                     <div class="card-body">
-                        <div class="image-container">
-                            <!-- Référence à l'image du dictionnaire de mots de passe ou failles ANSSI -->
-                            <img src="image_e5494e.png" alt="Brouillon et notes sur les lots de la SAÉ 1.01">
+                        <div class="terminal-container" style="margin-bottom: 15px;">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">Switch_Incomplet_CLI</span>
+                            </div>
+                            <pre class="terminal-body" style="color: #ff5555;">Switch(config)# line vty 0 4
+Switch(config-line)# transport input ssh
+Switch(config-line)# exit
+! Erreur : SSH n'a pas pu démarrer (Clé RSA manquante)</pre>
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Analyse des risques et
-                            répartition des lots de l'infrastructure de Jean Boomer avant sécurisation.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Lors des tentatives de connexion à distance sur les switchs, le terminal renvoyait une erreur de sécurité et refusait l'accès parce que la clé de chiffrement crypto n'existait pas encore sur la machine.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">✅ Audit et remédiation (Après)</div>
+                    <div class="card-header">✅ Accès SSH sécurisé et fonctionnel (Après)</div>
+                    <div class="card-body">
+                        <div class="terminal-container" style="margin-bottom: 15px;">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">Switch_Corrige_CLI</span>
+                            </div>
+                            <pre class="terminal-body" style="color: #55ff55;">Switch(config)# ip domain-name iutcaen.fr
+Switch(config)# crypto key generate rsa modulus 2048
+Switch(config)# ip ssh version 2
+Switch(config)# line vty 0 4
+Switch(config-line)# login local
+Switch(config-line)# transport input ssh</pre>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Application des commandes de sécurité requises (activation de SSH v2, création d'une clé RSA de 2048 bits conforme ANSSI et liaison correcte du protocole aux lignes virtuelles).</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-grid" style="margin-top: 30px;">
+                <div class="card">
+                    <div class="card-header">❌ Coupure et boucles entre les Switchs (Avant)</div>
+                    <div class="card-body">
+                        <div class="terminal-container" style="margin-bottom: 15px;">
+                            <div class="terminal-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="terminal-title">PC_Client_Terminal</span>
+                            </div>
+                            <pre class="terminal-body" style="color: #ff5555;">C:\> ping 192.168.20.50
+Envoi d'une requête 'Ping'  192.168.20.50 avec 32 octets de données :
+Délai d'attente de la demande dépassé.
+Délai d'attente de la demande dépassé.
+Statistiques Ping : Paquets envoyés = 2, reçus = 0, perdus = 2 (perte 100%)</pre>
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Les liaisons physiques de test entre switchs bloquaient totalement le trafic inter-VLAN. Le signal s'arrêtait net ou créait des boucles parce que les ports étaient restés configurés en mode accès classique.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">✅ Schéma Logique et liaisons Trunk validées (Après)</div>
                     <div class="card-body">
                         <div class="image-container">
-                            <img src="resolu.png" alt="Rapport de réussite ou preuve de sécurisation">
+                            <img src="Schéma logique.drawio.png" alt="Schéma logique final de l'infrastructure réseau">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Application des règles
-                            de durcissement de l'ANSSI sur la politique de mots de passe.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Validation finale de notre architecture selon le fichier <em>Schéma logique.drawio.jpg</em>. Configuration propre des liaisons en mode "Trunk", des agrégations de liens (LACP) et du protocole Spanning-Tree (RSTP).</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
+
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-brain" aria-label="Réflexion et analyse"></i></span>
@@ -196,25 +215,24 @@ Router(config-subif)# no shutdown</pre>
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Problèmes rencontrés & Solutions</h3>
-                <p>Lors de la configuration, j'ai rencontré un problème de connectivité entre deux VLANs différents.
-                    Après analyse des tables de routage, j'ai réalisé que l'encapsulation sur les sous-interfaces du
-                    routeur n'avait pas été correctement définie. <strong>Solution :</strong> J'ai vérifié la
-                    correspondance des IDs de VLAN entre le switch (trunk) et le routeur, ce qui a rétabli le trafic.
-                </p>
+                
+                <h4 style="color: var(--primary); margin-top: 15px;">1. Échecs de connexion et refus d'accès en SSH</h4>
+                <p><strong>Le problème :</strong> Impossible de prendre le contrôle à distance de nos commutateurs de manière sécurisée en SSH. Les tentatives se soldaient par des rejets de connexion. En analysant nos fichiers de configuration, nous avons réalisé que nous avions omis de générer la clé de chiffrement sur l'équipement, et que la version par défaut de SSH n'était pas forcée à la version 2. Le protocole refusait donc de s'activer.</p>
+                <p><strong>Notre solution :</strong> Nous nous sommes connectés en local via le câble console pour corriger la configuration. Nous avons défini un nom de domaine, généré une clé de chiffrement RSA robuste de 2048 bits selon les préconisations de l'ANSSI, et forcé l'utilisation du protocole à la version 2 (<code>ip ssh version 2</code>). Enfin, nous avons configuré les lignes d'accès virtuelles (VTY) pour qu'elles n'acceptent strictement que le trafic SSH (<code>transport input ssh</code>).</p>
+
+                <h4 style="color: var(--primary); margin-top: 15px;">2. Problèmes de liaisons et coupures entre les différents Switchs</h4>
+                <p><strong>Le problème :</strong> Lors des premiers tests de communication, les machines d'un même VLAN réparties sur différents switchs ne se pinguaient pas. Les ports d'interconnexion qui reliaient nos commutateurs SWR-1, SW1 et SW2 étaient configurés par défaut en mode "accès", ce qui empêchait le transport simultané de plusieurs réseaux (VLANs) sur un même câble.</p>
+                <p><strong>Notre solution :</strong> Nous avons reconfiguré tous les ports d'interconnexion reliant les switchs pour les passer explicitement en mode "Trunk" (encapsulation 802.1Q). De plus, pour fiabiliser et doubler le débit de ces liaisons tout en évitant les coupures de boucle réseau, nous avons mi en œuvre une agrégation de liens (EtherChannel via LACP) et configuré le protocole Rapid Spanning-Tree (RSTP) en plaçant SWR-1 comme commutateur racine prioritaire.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
-                <p>Grâce à ce projet, j'ai pu démontrer les compétences du pôle <strong>RT3 (Développer)</strong> :</p>
+                <p>Grâce à ce projet, j'ai pu démontrer les compétences du pôle <strong>RT3 (Développer / Programmer)</strong> :</p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC11.01 :</strong> Savoir configurer les équipements de
-                        couche 2 et 3.</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC11.05 :</strong> Capacité à questionner un cahier des
-                        charges technique.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC11.01 :</strong> Savoir configurer les équipements de couche 2 (switchs) et couche 3 (routeur).</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC11.05 :</strong> Capacité à questionner un cahier des charges technique et à diagnostiquer les pannes.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Je suis satisfait de la rigueur apportée au plan d'adressage. Cependant, je pense que j'aurais pu
-                    optimiser la sécurité en configurant le <em>Port-Security</em> sur les switchs d'accès dès le départ
-                    pour prévenir les intrusions physiques.</p>
+                <p>Je suis satisfait de la rigueur apportée à la résolution de nos pannes de liaisons. La création et le suivi de notre topologie d'après le document <em>Schéma logique.drawio.jpg</em> nous ont permis de comprendre visuellement le flux des VLANs. Cependant, je pense que j'aurais pu optimiser la sécurité en configurant le <em>Port-Security</em> sur les switchs d'accès dès le départ pour prévenir les intrusions physiques.</p>
             </div>
         </section>
 
