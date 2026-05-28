@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAÉ 1.13 - Portfolio Iban Leconte</title>
+    <title>SAÉ 1.03 - Portfolio Iban Leconte</title>
 
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap"
@@ -29,13 +29,13 @@
 
     <header class="sae-hero">
         <div class="container">
-            <span class="badge">Ressource R1.13</span>
-            <h1>SAÉ 1.13 : Virtualisation et déploiement serveur</h1>
+            <span class="badge">Ressource R1.03</span>
+            <h1>SAÉ 1.03 : Découverte d'un dispositif de transmission</h1>
             <div class="tags-container" style="margin-top: 15px;">
-                <span class="tag-pill">Virtualisation</span>
-                <span class="tag-pill">Linux</span>
-                <span class="tag-pill">Docker</span>
-                <span class="tag-pill">Serveurs</span>
+                <span class="tag-pill">Métrologie</span>
+                <span class="tag-pill">Fibre Optique</span>
+                <span class="tag-pill">Câble Coaxial</span>
+                <span class="tag-pill">NVP & Atténuation</span>
             </div>
         </div>
     </header>
@@ -55,8 +55,7 @@
 
                 <p style="margin-top: 12px;">L'objectif principal de ce projet est de <strong>comprendre et reproduire
                         partiellement</strong> les paramétrages et les mesures automatiques effectués par un
-                    <strong>certificateur de réseau professionnel</strong> (équipement dont l'IUT ne dispose pas
-                    directement en salle de TP). Ce projet en <strong>binôme</strong> s'est articulé autour de l'étude
+                    <strong>certificateur de réseau professionnel</strong>. Ce projet en <strong>binôme</strong> s'est articulé autour de l'étude
                     concrète de deux supports physiques fondamentaux en R&T : les <strong>câbles en cuivre</strong> et
                     la <strong>fibre optique</strong>.</p>
 
@@ -70,38 +69,28 @@
                 <ul style="list-style: none; padding-left: 0;">
                     <li><strong>Mesures DTF (Distance to Fault) :</strong> Utilisation d'un analyseur de réseau
                         spécifique pour cartographier l'état interne de câbles coaxiaux (type <strong>RG58, NVP =
-                            66</strong>) et de câbles <strong>Ethernet</strong>. L'objectif était de détecter la
+                            66%</strong>) et de câbles <strong>Ethernet</strong>. L'objectif était de détecter la
                         distance exacte d'un défaut (coupure ou court-circuit) ou d'en déterminer la longueur totale
-                        inconnue</li>
+                        inconnue.</li>
                     <li style="margin-top: 10px;"><strong>Régime impulsionnel (Étalonnage & Réflectométrie) :</strong> À
                         l'aide d'un <strong>Générateur de Basses Fréquences (GBF)</strong> et d'un
                         <strong>oscilloscope</strong>, observation du déplacement et de la réflexion d'une onde
-                        impulsionnelle de tension dans un câble</li>
+                        impulsionnelle de tension dans un câble.</li>
                     <li style="margin-top: 10px;"><strong>Calcul de la NVP (Nominal Velocity of Propagation) :</strong>
                         À partir d'un câble Ethernet étalon de référence de 2 mètres, application d'une méthode de
                         calcul mathématique (développée en TD) pour définir la vitesse de propagation propre au câble
-                        assigné, afin de corroborer la longueur mesurée par l'analyseur DTF</li>
+                        assigné, afin de corroborer la longueur mesurée par l'analyseur DTF.</li>
                 </ul>
 
                 <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">2.
                     Qualification et photométrie sur Fibre Optique</h4>
                 <ul style="list-style: none; padding-left: 0;">
                     <li><strong>Câblage de liaison :</strong> Réalisation et interconnexion d'une liaison fibrée
-                        spécifique de type <strong>FTTH (Fiber To The Home)</strong></li>
+                        spécifique de type <strong>FTTH (Fiber To The Home)</strong>.</li>
                     <li style="margin-top: 10px;"><strong>Mesure de photométrie :</strong> Manipulation de sources
                         optiques et de photomètres pour mesurer précisément l'<strong>affaiblissement</strong> et
                         qualifier l'<strong>atténuation globale</strong> de la liaison en décibels (<strong>dB /
-                            dBm</strong>)</li>
-                </ul>
-
-                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3.
-                    Ingénierie documentaire et Certification</h4>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Analyse des documents constructeurs :</strong> Comprendre les processus métiers de
-                        certification des supports de transmission selon les normes</li>
-                    <li style="margin-top: 10px;"><strong>Rédaction d'une fiche de synthèse :</strong> Regroupement
-                        manuscrit de l'ensemble des formules clés (calculs de dB, dBm, coefficients de réflexion,
-                        paradiaphonie/NEXT, télédiaphonie/PSNEXT) autorisée lors de l'évaluation finale</li>
+                            dBm</strong>).</li>
                 </ul>
 
                 <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Livrables et Évaluations</h3>
@@ -109,32 +98,14 @@
                 <ul style="list-style: none; padding-left: 0;">
                     <li><strong>Rapport Technique Cuivre (Format A4) :</strong> Compte-rendu scientifique détaillant les
                         relevés de temps de parcours, le calcul de la <strong>NVP</strong> et l'identification de la
-                        distance au défaut sur le câble coaxial et Ethernet attribué</li>
+                        distance au défaut sur le câble coaxial et Ethernet attribué.</li>
                     <li style="margin-top: 10px;"><strong>Rapport Technique Fibre Optique (Format A4) :</strong> Analyse
                         mathématique et graphique de l'<strong>affaiblissement</strong> de la liaison
-                        <strong>FTTH</strong> mesurée par photométrie</li>
-                    <li style="margin-top: 10px;"><strong>Contrôle de connaissances (QCM Ecampus) :</strong> Validation
-                        individuelle finale portant sur la théorie des lignes, les calculs de puissance en
-                        <strong>dB/dBm</strong>, l'analyse des réflexions et les phénomènes de diaphonie</li>
+                        <strong>FTTH</strong> mesurée par photométrie.</li>
                 </ul>
 
-                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Ressources et compétences
-                    transversales mobilisées</h3>
-                <p>Cette SAÉ a nécessité la mise en œuvre et la synergie de nombreuses matières scientifiques et
-                    techniques du <strong>Tronc Commun</strong> :</p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>R1.07 (Fondamentaux de la programmation) :</strong> Pour l'automatisation éventuelle de
-                        certains calculs de mesures</li>
-                    <li style="margin-top: 10px;"><strong>R1.08 (Bases des systèmes d'exploitation) :</strong> Pour la
-                        manipulation et la gestion des fichiers de rapports</li>
-                    <li style="margin-top: 10px;"><strong>R1.11 (Expression-Culture-Communication) :</strong> Pour la
-                        rigueur de rédaction professionnelle des rapports de mesures</li>
-                </ul>
                 <div class="deliverables">
-
-                    <ul class="check-list">
-
-                    </ul>
+                    <ul class="check-list"></ul>
                 </div>
             </div>
         </section>
@@ -143,74 +114,87 @@
 
         <section class="content-block">
             <div class="block-header">
-                <span class="icon"><i class="fa-solid fa-server" aria-label="Réalisations techniques"></i></span>
+                <span class="icon"><i class="fa-solid fa-signal" aria-label="Réalisations techniques"></i></span>
                 <h2>Réalisations techniques</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Présentation de l'environnement déployé et des services
-                disponibles.</p>
+            <p style="margin-bottom: 20px; color: #475569;">Protocoles expérimentaux appliqués pour la qualification des lignes électriques et optiques :</p>
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">Infrastructure VM</div>
+                    <div class="card-header">Réflectométrie Cuivre (Coaxial & RJ45)</div>
                     <div class="card-body">
-                        <div
-                            style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
-                            <p style="color: var(--primary); font-size: 0.8rem;">[Diagramme VM]</p>
-                        </div>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Configuration des machines virtuelles et du
-                            réseau interne pour l'hébergement des services.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Câble Coaxial (RG58) :</strong> Branchement du câble inconnu sur l'analyseur de spectre, réglage de la courbe avec les boutons d'amplitude et de référence afin d'isoler l'écho de fin de ligne et mesurer le temps de propagation.</p>
+                        <p style="font-size: 0.9rem;"><strong>Câble Ethernet (RJ45) :</strong> Raccordement d'une paire torsadée. Face au bruit généré par l'adaptateur de test, réglage d'une distance de démarrage sur la courbe pour annuler le bruit d'interface et obtenir la longueur réelle.</p>
                     </div>
                 </div>
                 <div class="card">
-                    <div class="card-header">Conteneurs & Services</div>
+                    <div class="card-header">Photométrie et Étalonnage Fibre</div>
                     <div class="card-body">
-                        <pre
-                            style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
-docker run -d --name webapp -p 8080:80 myapp:latest
-                        </pre>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Déploiement d'un service web conteneurisé
-                            accessible sur le réseau local.</p>
+                        <p style="font-size: 0.9rem; margin-bottom: 10px;"><strong>Procédure de Tare :</strong> Connexion directe de l'émetteur et du récepteur avec les jarretières de test, configuration de la longueur d'onde de travail identique sur les deux appareils, puis utilisation de la fonction <code>ABS > REF</code> du photomètre pour faire le zéro de référence.</p>
+                        <p style="font-size: 0.9rem;"><strong>Mesure sur Rack :</strong> Insertion dans la liaison FTTH assignée (port 5 et port 18) pour relever directement la dégradation du signal lumineux induite par la distance et les connecteurs.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
         <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
 
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-exclamation-triangle"
                         aria-label="Preuves des difficultés"></i></span>
-                <h2>Preuves des difficultés rencontrées</h2>
+                <h2>Preuves des difficultés rencontrées & Rapports de Mesure</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Documentation des audits et des vulnérabilités identifiées
-                lors du CTF :</p>
+            <p style="margin-bottom: 20px; color: #475569;">Validation de l'ajustement des formules d'étalonnage pour obtenir des longueurs et atténuations cohérentes :</p>
 
             <div class="project-grid">
                 <div class="card">
-                    <div class="card-header">❌ Identification des failles (Avant)</div>
+                    <div class="card-header">❌ Erreur de calcul de longueur Cuivre (Avant)</div>
                     <div class="card-body">
-                        <div class="image-container">
-                            <!-- Référence à l'image du dictionnaire de mots de passe ou failles ANSSI -->
-                            <img src="image_e5494e.png" alt="Brouillon et notes sur les lots de la SAÉ 1.01">
+                        <div class="terminal-container" style="margin-bottom: 15px; background: #1a1a1a; color: #ff5555; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.8rem;">
+                            Mesure brute Analyseur : Longueur affichée = 10.4 m
+                            Vitesse par défaut configurée (NVP) : 1.0 (Vitesse de la lumière)
+                            ! Statut : Incohérent (Le câble physique est visiblement plus court)
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Analyse des risques et
-                            répartition des lots de l'infrastructure de Jean Boomer avant sécurisation.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> L'analyseur renvoyait des résultats faux. Sans réglage de la vitesse de propagation propre au matériau (NVP), l'appareil calculait la distance comme si le signal se déplaçait dans le vide.</p>
                     </div>
                 </div>
 
                 <div class="card">
-                    <div class="card-header">✅ Audit et remédiation (Après)</div>
+                    <div class="card-header">✅ Étalonnage NVP et Rapport Final (Après)</div>
                     <div class="card-body">
-                        <div class="image-container">
-                            <img src="resolu.png" alt="Rapport de réussite ou preuve de sécurisation">
+                        <div class="image-container" style="margin-bottom: 15px; border: 1px solid var(--border); border-radius: 6px; padding: 5px; background: #fff;">
+                            <img src="image copy.png" alt="Rapport de mesure Cuivre validé" style="width: 100%; height: auto;">
                         </div>
-                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Application des règles
-                            de durcissement de l'ANSSI sur la politique de mots de passe.</p>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Utilisation de notre câble étalon de 2 mètres réglé à 0.66 de NVP pour recalibrer l'appareil. La mesure finale sur notre câble (E10) affiche ainsi une valeur réelle et cohérente de 6.9 mètres.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-grid" style="margin-top: 30px;">
+                <div class="card">
+                    <div class="card-header">❌ Atténuation brute sans calibration (Avant)</div>
+                    <div class="card-body">
+                        <div class="terminal-container" style="margin-bottom: 15px; background: #1a1a1a; color: #ff5555; padding: 15px; border-radius: 5px; font-family: monospace; font-size: 0.8rem;">
+                            Mesure brute Photomètre : -15.06 dBm
+                            Atténuation lue directement sans soustraction de la tare
+                            ! Statut : Erroné (Prend en compte la perte des câbles de test)
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Valeurs d'affaiblissement faussées. Le photomètre mesurait l'atténuation totale de la chaîne sans déduire la perte naturelle des cordons de mesure de l'appareil.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">✅ Étalonnage de la Tare et Rapport Optique (Après)</div>
+                    <div class="card-body">
+                        <div class="image-container" style="margin-bottom: 15px; border: 1px solid var(--border); border-radius: 6px; padding: 5px; background: #fff;">
+                            <img src="image copy 2.png" alt="Rapport de mesure Atténuation Fibre" style="width: 100%; height: auto;">
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Réalisation d'une mise à zéro (Tare) à -6.00 dB entre les deux modules. Une fois inséré sur le rack FTTH, le photomètre affiche l'atténuation exacte de la ligne : 9.06 dB.</p>
                     </div>
                 </div>
             </div>
         </section>
+
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-lightbulb" aria-label="Analyse réflexive"></i></span>
@@ -218,22 +202,18 @@ docker run -d --name webapp -p 8080:80 myapp:latest
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Difficultés rencontrées & Solutions</h3>
-                <p>La synchronisation des ressources entre les containers et les machines virtuelles était parfois
-                    délicate. <strong>Solution :</strong> j'ai standardisé les volumes et les variables d'environnement
-                    pour garantir un comportement prédictible.</p>
+                <p><strong>Compréhension et application des formules de mesure :</strong> Notre principale difficulté a été de comprendre comment exploiter les formules de physique des lignes pour obtenir des résultats cohérents sur l'analyseur. Au début, les mesures de distance et d'affaiblissement étaient fausses car nous oubliions de calibrer l'environnement de test par rapport aux outils physiques.</p>
+                <p><strong>La solution trouvée :</strong> Pour le cuivre, nous avons compris qu'il fallait définir la NVP (vitesse de propagation de l'onde dans le métal). Nous avons utilisé un câble étalon de référence de 2 mètres connu pour trouver la constante de 0.66, permettant ainsi de mesurer notre vrai câble à 6.9 mètres. Pour la fibre optique, nous avons appliqué la méthode de la "Tare" en connectant les jarretières en direct pour enregistrer le niveau de puissance initial à l'aide du bouton <code>ABS > REF</code>, isolant ainsi la perte réelle de notre liaison à 9.06 dB.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
-                <p>J'ai développé mes compétences sur la gestion des infrastructures virtualisées :</p>
+                <p>J'ai développé mes compétences sur la gestion des infrastructures physiques de transmission :</p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC13.01 :</strong> Déployer et administrer des services
-                        virtuels.</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC13.04 :</strong> Assurer la disponibilité d'une
-                        infrastructure.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC13.01 :</strong> Maîtriser les outils de métrologie cuivre et de photométrie optique.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC13.04 :</strong> Valider la conformité et certifier la longueur et l'affaiblissement d'un support.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Je trouve que l'environnement est stable et adapté aux tests. Pour progresser, je souhaite intégrer
-                    une solution de monitoring centralisé.</p>
+                <p>Je trouve que nos mesures finales sont très stables et conformes aux fiches constructeurs. Ce projet m'a permis de comprendre concrètement les formules mathématiques de TD en les appliquant sur de vrais câbles de laboratoire.</p>
             </div>
         </section>
 
