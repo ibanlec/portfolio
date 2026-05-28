@@ -46,77 +46,78 @@
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                    <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
-                    <p>Réalisée au premier semestre au département <strong>Réseaux et Télécommunications</strong> de
-                        l'IUT de Caen, la <strong>SAÉ 1.02</strong> propose une mise en situation complète pour
-                        concevoir et déployer un <strong>réseau local d'entreprise (LAN)</strong>. Mené en équipes de
-                        quatre, le projet vise à bâtir une infrastructure <strong>stable</strong>,
-                        <strong>ségrisée</strong> et <strong>fonctionnelle</strong> en respectant un cahier des charges
-                        professionnel.</p>
+                <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
+                <p>Réalisée au premier semestre au département <strong>Réseaux et Télécommunications</strong> de
+                    l'IUT de Caen, la <strong>SAÉ 1.02</strong> propose une mise en situation complète pour
+                    concevoir et déployer un <strong>réseau local d'entreprise (LAN)</strong>. Mené en équipes de
+                    quatre, le projet vise à bâtir une infrastructure <strong>stable</strong>,
+                    <strong>ségrisée</strong> et <strong>fonctionnelle</strong> en respectant un cahier des charges
+                    professionnel.
+                </p>
 
-                    <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Architecture technique
-                        & manipulations</h3>
-                    <p>Le projet combinait l'interconnexion d'équipements Cisco physiques et le déploiement
-                        d'environnements virtualisés (Proxmox) pour héberger des services essentiels.</p>
+                <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Architecture technique
+                    & manipulations</h3>
+                <p>Le projet combinait l'interconnexion d'équipements Cisco physiques et le déploiement
+                    d'environnements virtualisés (Proxmox) pour héberger des services essentiels.</p>
 
-                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">1.
-                        Configuration et ingénierie réseau</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li><strong>Plan d'adressage IP :</strong> Conception et déploiement d'un plan IPv4 (adresses
-                            fixes et DHCP) adapté à la segmentation par VLAN.</li>
-                        <li style="margin-top: 8px;"><strong>Matériel Cisco :</strong> Configuration CLI de commutateurs
-                            de niveau 2 (Cisco 2960), commutateur de niveau 3 (Cisco 3560) et routeur LAN/WAN (Cisco
-                            2911).</li>
-                        <li style="margin-top: 8px;"><strong>Protocoles :</strong> RSTP, EtherChannel, segmentation par
-                            VLAN (Data / Management) et routage inter-VLAN.</li>
+                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">1.
+                    Configuration et ingénierie réseau</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Plan d'adressage IP :</strong> Conception et déploiement d'un plan IPv4 (adresses
+                        fixes et DHCP) adapté à la segmentation par VLAN.</li>
+                    <li style="margin-top: 8px;"><strong>Matériel Cisco :</strong> Configuration CLI de commutateurs
+                        de niveau 2 (Cisco 2960), commutateur de niveau 3 (Cisco 3560) et routeur LAN/WAN (Cisco
+                        2911).</li>
+                    <li style="margin-top: 8px;"><strong>Protocoles :</strong> RSTP, EtherChannel, segmentation par
+                        VLAN (Data / Management) et routage inter-VLAN.</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">2.
+                    Sécurisation des commutateurs (Switch Hardening)</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Protection contre les tempêtes de diffusion :</strong> Mise en place de mécanismes
+                        limitant les broadcast storms.</li>
+                    <li style="margin-top: 8px;"><strong>Prévention du MAC Flooding :</strong> Limitation et
+                        surveillance du remplissage de la table CAM.</li>
+                    <li style="margin-top: 8px;"><strong>Sécurisation des ports d'accès :</strong> Politiques pour
+                        empêcher les connexions non autorisées (Port-Security, VLAN access control).</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">3.
+                    Déploiement système & services (Virtualisation)</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Infrastructure Proxmox :</strong> Installation d'une VM Debian (disques multiples,
+                        interfaces réseau) sur la baie de serveurs configurée en cluster.</li>
+                    <li style="margin-top: 8px;"><strong>Services applicatifs :</strong> Déploiement et
+                        administration de serveur Web, FTP, TFTP et DNS cache.</li>
+                    <li style="margin-top: 8px;"><strong>Accès sécurisés :</strong> Configuration SSH
+                        (authentification par mot de passe puis par clés asymétriques pour les accès critiques).
+                    </li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Organisation et
+                    livrables attendus</h3>
+                <p>Travail collaboratif et documentation : rédaction de notices techniques partagées, respect des
+                    procédures d'exploitation (quorum cluster, extinction ordonnée) et évaluations de groupe
+                    complétées par des contrôles individuels (QCM).</p>
+
+                <h3 style="margin-top: 22px;">Ressources et compétences mobilisées</h3>
+                <p>Cette SAÉ mobilise plusieurs compétences du tronc commun :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li style="margin-bottom: 8px;"><strong>R1.07 :</strong> Fondamentaux de la programmation —
+                        automatisation et scripts d'assistance.</li>
+                    <li style="margin-bottom: 8px;"><strong>R1.08 :</strong> Bases des systèmes d'exploitation —
+                        gestion des VM et fichiers de configuration.</li>
+                    <li style="margin-bottom: 8px;"><strong>R1.11 :</strong> Expression & communication — rédaction
+                        professionnelle des rapports techniques.</li>
+                </ul>
+
+                <div class="deliverables">
+                    <ul class="check-list">
+
                     </ul>
-
-                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">2.
-                        Sécurisation des commutateurs (Switch Hardening)</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li><strong>Protection contre les tempêtes de diffusion :</strong> Mise en place de mécanismes
-                            limitant les broadcast storms.</li>
-                        <li style="margin-top: 8px;"><strong>Prévention du MAC Flooding :</strong> Limitation et
-                            surveillance du remplissage de la table CAM.</li>
-                        <li style="margin-top: 8px;"><strong>Sécurisation des ports d'accès :</strong> Politiques pour
-                            empêcher les connexions non autorisées (Port-Security, VLAN access control).</li>
-                    </ul>
-
-                    <h4 style="color: var(--primary); margin-top: 16px; margin-bottom: 8px; font-size: 0.95rem;">3.
-                        Déploiement système & services (Virtualisation)</h4>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li><strong>Infrastructure Proxmox :</strong> Installation d'une VM Debian (disques multiples,
-                            interfaces réseau) sur la baie de serveurs configurée en cluster.</li>
-                        <li style="margin-top: 8px;"><strong>Services applicatifs :</strong> Déploiement et
-                            administration de serveur Web, FTP, TFTP et DNS cache.</li>
-                        <li style="margin-top: 8px;"><strong>Accès sécurisés :</strong> Configuration SSH
-                            (authentification par mot de passe puis par clés asymétriques pour les accès critiques).
-                        </li>
-                    </ul>
-
-                    <h3 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px;"> Organisation et
-                        livrables attendus</h3>
-                    <p>Travail collaboratif et documentation : rédaction de notices techniques partagées, respect des
-                        procédures d'exploitation (quorum cluster, extinction ordonnée) et évaluations de groupe
-                        complétées par des contrôles individuels (QCM).</p>
-
-                    <h3 style="margin-top: 22px;">Ressources et compétences mobilisées</h3>
-                    <p>Cette SAÉ mobilise plusieurs compétences du tronc commun :</p>
-                    <ul style="list-style: none; padding-left: 0;">
-                        <li style="margin-bottom: 8px;"><strong>R1.07 :</strong> Fondamentaux de la programmation —
-                            automatisation et scripts d'assistance.</li>
-                        <li style="margin-bottom: 8px;"><strong>R1.08 :</strong> Bases des systèmes d'exploitation —
-                            gestion des VM et fichiers de configuration.</li>
-                        <li style="margin-bottom: 8px;"><strong>R1.11 :</strong> Expression & communication — rédaction
-                            professionnelle des rapports techniques.</li>
-                    </ul>
-
-                    <div class="deliverables">
-                        <ul class="check-list">
-
-                        </ul>
-                    </div>
                 </div>
+            </div>
             </div>
             <p style="margin-bottom: 20px; color: #475569;">Aperçu du travail effectué sur l'architecture réseau et la
                 configuration.</p>
@@ -152,7 +153,42 @@ Router(config-subif)# no shutdown</pre>
                 </div>
             </div>
         </section>
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid var(--primary); opacity: 0.3;">
 
+        <section class="content-block">
+            <div class="block-header">
+                <span class="icon"><i class="fa-solid fa-exclamation-triangle"
+                        aria-label="Preuves des difficultés"></i></span>
+                <h2>Preuves des difficultés rencontrées</h2>
+            </div>
+            <p style="margin-bottom: 20px; color: #475569;">Documentation des audits et des vulnérabilités identifiées
+                lors du CTF :</p>
+
+            <div class="project-grid">
+                <div class="card">
+                    <div class="card-header">❌ Identification des failles (Avant)</div>
+                    <div class="card-body">
+                        <div class="image-container">
+                            <!-- Référence à l'image du dictionnaire de mots de passe ou failles ANSSI -->
+                            <img src="image_e5494e.png" alt="Brouillon et notes sur les lots de la SAÉ 1.01">
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Situation :</strong> Analyse des risques et
+                            répartition des lots de l'infrastructure de Jean Boomer avant sécurisation.</p>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">✅ Audit et remédiation (Après)</div>
+                    <div class="card-body">
+                        <div class="image-container">
+                            <img src="resolu.png" alt="Rapport de réussite ou preuve de sécurisation">
+                        </div>
+                        <p style="font-size: 0.85rem; color: #666;"><strong>Correction :</strong> Application des règles
+                            de durcissement de l'ANSSI sur la politique de mots de passe.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <section class="content-block">
             <div class="block-header">
                 <span class="icon"><i class="fa-solid fa-brain" aria-label="Réflexion et analyse"></i></span>
