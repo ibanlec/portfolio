@@ -7,13 +7,9 @@
     <title>Portfolio - Iban Leconte - BUT R&T</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -35,20 +31,29 @@
         </ul>
     </nav>
 
-    <header id="home" class="hero">
-        <div class="hero-content">
-            <div class="hero-text">
+    <!-- Header optimisé -->
+    <header id="home" class="hero" style="min-height: 250px; padding: 20px 10%;">
+        <div class="hero-content" style="display: flex; align-items: center; justify-content: space-between; width: 100%; gap: 20px; flex-wrap: wrap;">
+            
+            <!-- Bloc texte à gauche -->
+            <div class="hero-text" style="flex: 1; min-width: 250px;">
                 <h1>Iban <span class="highlight">Leconte</span></h1>
                 <p class="subtitle">Étudiant en BUT Réseaux & Télécommunications</p>
                 <p>IUT de Caen Normandie - Campus d'Ifs</p>
-                <div class="hero-btns">
-                    <a href="sae.html" class="btn">Voir mes travaux</a>
-                    <a href="#path" class="btn btn-outline">Mon parcours</a>
-                </div>
             </div>
-            <div class="profile-container">
-                <img src="image.png" alt="Photo de profil Iban Leconte" class="profile-img">
+            
+            <!-- Bloc photo centré (Carré 200x200) -->
+            <div class="profile-container" style="display: flex; justify-content: center; flex: 1;">
+                <img src="image.png" alt="Photo de profil Iban Leconte" 
+                     style="width: 200px; height: 200px; border-radius: 10px; object-fit: cover; box-shadow: 0 10px 20px rgba(0,0,0,0.2);">
             </div>
+            
+            <!-- Bloc boutons côte à côte à droite -->
+            <div class="hero-btns" style="display: flex; gap: 10px; flex: 1; justify-content: flex-end; align-items: center;">
+                <a href="sae.html" class="btn">Voir mes travaux</a>
+                <a href="#path" class="btn btn-outline">Mon parcours</a>
+            </div>
+
         </div>
     </header>
 
@@ -62,7 +67,7 @@
             </div>
             <div class="path-card">
                 <h3>Mon Projet Pro</h3>
-                <p>Je souhaite m'orienter vers une entreprise après mon BUT.</p>
+                <p>Je souhaite m'orienter vers une entreprise en architecture réseau après mon BUT afin de pouvoir utiliser l'ensemble de mes compétences acquises pendant mon BUT R&T.</p>
             </div>
         </div>
     </section>
@@ -93,36 +98,29 @@
             </div>
         </div>
     </section>
-<section id="about" class="container">
-    <h2 class="section-title">À propos de moi</h2>
-    
-    <div class="about-wrapper">
-        <div class="about-text">
-            <h3>Bonjour, je suis <span class="highlight">Iban Leconte</span></h3>
-            <p>
-                Actuellement étudiant en <strong>BUT Réseaux & Télécommunications</strong> à l'IUT de Caen Normandie, je me passionne pour la conception d'architectures réseaux et la sécurisation des systèmes d'information.
-            </p>
-            <p>
-                Mon cursus m'a permis d'acquérir une base solide en administration système (Linux/Windows) et en configuration d'équipements Cisco. Curieux de nature, j'aime relever des défis techniques, que ce soit à travers le développement de scripts d'automatisation ou l'optimisation de topologies réseaux.
-            </p>
-            <p>
-                En dehors de l'informatique, je cultive mon esprit en faisant du  <strong>sport</strong>. Cette passion m'apprend la rigueur et la persévérance, des qualités que j'applique dans chacun de mes projets techniques.
-            </p>
-            
-            <div class="about-cta">
-                <a href="#contact" class="btn">Me contacter</a>
-                <a href="CV_IBAN.pdf" class="btn btn-outline">Télécharger mon CV</a>
-            </div>
-        </div>
 
-        <div class="about-details">
-            <div class="detail-card">
-                <span class="detail-icon"><i class="fa-solid fa-location-dot" aria-label="Localisation"></i></span>
-                <div class="detail-info">
-                    <h4>Localisation</h4>
-                    <p>Caen, Normandie</p>
+    <section id="about" class="container">
+        <h2 class="section-title">À propos de moi</h2>
+        
+        <div class="about-wrapper">
+            <div class="about-text">
+                <h3>Bonjour, je suis <span class="highlight">Iban Leconte</span></h3>
+                <p>
+                    Actuellement étudiant en <strong>BUT Réseaux & Télécommunications</strong> à l'IUT de Caen Normandie, je me passionne pour la conception d'architectures réseaux et la sécurisation des systèmes d'information.
+                </p>
+                <p>
+                    Mon cursus m'a permis d'acquérir une base solide en administration système (Linux/Windows) et en configuration d'équipements Cisco. Curieux de nature, j'aime relever des défis techniques, que ce soit à travers le développement de scripts d'automatisation ou l'optimisation de topologies réseaux.
+                </p>
+                <p>
+                    En dehors de l'informatique, je cultive mon esprit en faisant du <strong>sport</strong>. Cette passion m'apprend la rigueur et la persévérance, des qualités que j'applique dans chacun de mes projets techniques.
+                </p>
+                
+                <div class="about-cta">
+                    <a href="#contact" class="btn">Me contacter</a>
+                    <a href="CV_IBAN.pdf" class="btn btn-outline">Télécharger mon CV</a>
                 </div>
             </div>
+
             <div class="about-details">
                 <div class="detail-card">
                     <span class="detail-icon"><i class="fa-solid fa-location-dot" aria-label="Localisation"></i></span>
@@ -140,14 +138,7 @@
                 </div>
             </div>
         </div>
-    </div>
-</section>
-
-
-
-
-
-
+    </section>
 
     <footer id="contact">
         <div class="container">
