@@ -44,14 +44,42 @@
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                <p>Cette SAÉ portait sur la sécurisation d'une infrastructure réseau et la rédaction d'un audit. Il s'agissait de repérer les failles, proposer des améliorations et vérifier la conformité aux bonnes pratiques.</p>
+                <p style="margin-bottom: 0; color: #64748b; font-size: 0.95rem;"><strong>Contexte du projet :</strong> Se sensibiliser à l'hygiène informatique et à la cybersécurité</p>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Présentation générale</h3>
+                <p>Réalisée au cours du premier semestre au département <strong>Réseaux et Télécommunications</strong>, la SAÉ 1.11 vise à appréhender les <strong>risques majeurs</strong> de notre environnement numérique. En tant que futur professionnel R&T, l'un des rôles clés est de savoir <strong>vulgariser les cybermenaces</strong> et de sensibiliser les collaborateurs d'une entreprise aux bonnes pratiques de sécurité (politique de l'ANSSI, chartes informatiques).</p>
+                <p style="margin-top: 12px; margin-bottom: 0;">Ce projet s'est articulé autour de <strong>trois axes principaux</strong> :</p>
+                <ul style="list-style: none; padding-left: 0; margin-top: 12px;">
+                    <li><strong>•</strong> Auto-formation et certification individuelle via le MOOC <strong>SecNumacadémie</strong> de l'ANSSI</li>
+                    <li style="margin-top: 8px;"><strong>•</strong> Évaluation finale théorique sous forme de <strong>QCM</strong> ouvrant droit à la délivrance d'un <strong>Open Badge</strong> de compétences</li>
+                    <li style="margin-top: 8px;"><strong>•</strong> Travail d'investigation technique en groupe et réalisation d'un TP de type <strong>Capture the Flag (CTF)</strong> en environnement virtualisé</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Travail demandé et organisation en lots</h3>
+                <p>Au sein de chaque groupe de TP, nous devions constituer des équipes de <strong>3 à 5 personnes</strong> afin que chaque groupe traite une thématique d'expérimentation et de recherche différente. Les sujets étaient répartis en <strong>3 lots distincts</strong> :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Lot A :</strong> Mots de passe utilisateurs (complexité, attaques par dictionnaire, gestionnaires de mots de passe sous Debian)</li>
+                    <li style="margin-top: 10px;"><strong>Lot B :</strong> Sécurisation et durcissement des accès SSH (mécanismes de chiffrement, authentification par clés asymétriques selon les préconisations ANSSI)</li>
+                    <li style="margin-top: 10px;"><strong>Lot C :</strong> Découverte de machines et cartographie réseau</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Dans le cadre de cette SAÉ, notre groupe a pris en charge le Lot C.</strong></p>
+
+                <h4 style="color: var(--primary); margin-top: 20px; margin-bottom: 12px; font-size: 1rem;">Focus sur le Lot C : Découverte et cartographie réseau</h4>
+                <p>Notre mission technique consistait à documenter et expérimenter l'utilisation d'<strong>outils de sécurité</strong> sous distribution Linux (Debian/Kali) pour réaliser les actions suivantes :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Reconnaissance active :</strong> Découvrir l'ensemble des machines hôtes actives sur un segment réseau donné</li>
+                    <li style="margin-top: 8px;"><strong>Reconnaissance d'OS (Fingerprinting) :</strong> Identifier les systèmes d'exploitation des machines distantes</li>
+                    <li style="margin-top: 8px;"><strong>Audit de ports et de services :</strong> Scanner et lister les services applicatifs ouverts sur les cibles</li>
+                    <li style="margin-top: 8px;"><strong>Analyse de version :</strong> Déterminer précisément les versions des services en cours d'exécution et expliciter le mécanisme de requêtage utilisé pour la détection</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Mise en situation pratique : Le TP "Jean Boomer"</h3>
+                <p>Pour appliquer l'ensemble des compétences développées à travers les lots, nous avons réalisé un TP de <strong>découverte offensive</strong> au sein d'un laboratoire virtuel isolé sur <strong>VirtualBox</strong>.</p>
+                <p style="margin-top: 12px;">L'architecture comprenait une <strong>machine attaquante</strong> (Kali Linux) et une <strong>machine victime</strong> (Windows 10) simulant le poste d'un utilisateur aux pratiques non sécurisées nommé <strong>Jean Boomer</strong>.</p>
                 <div class="deliverables">
-                    <h4>Compétences visées :</h4>
+                    
                     <ul class="check-list">
-                        <li>Identifier les risques de sécurité.</li>
-                        <li>Configurer des protections réseau.</li>
-                        <li>Rédiger un rapport d'audit.</li>
-                        <li>Proposer des recommandations pratiques.</li>
+                        
                     </ul>
                 </div>
             </div>

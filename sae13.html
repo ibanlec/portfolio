@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAÉ 1.13 - Portfolio Iban Leconte</title>
-    
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="sae-page">
 
     <nav class="glass-nav">
@@ -44,14 +47,52 @@
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                <p>Cette SAÉ visait la mise en place d'une infrastructure virtualisée et le déploiement de services dans un environnement contrôlé. Le but était d'assurer la disponibilité, la maintenance et la gestion des ressources serveur.</p>
+                <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
+                <p>Menée au cours du premier semestre de l'année universitaire <strong>2025-2026</strong> au département <strong>Réseaux et Télécommunications</strong> de l'IUT Grand Ouest Normandie (Campus d'Ifs), la <strong>SAÉ 1.03 (Découverte d'un dispositif de transmission)</strong> pose les bases des <strong>infrastructures physiques de communication</strong>.</p>
+
+                <p style="margin-top: 12px;">L'objectif principal de ce projet est de <strong>comprendre et reproduire partiellement</strong> les paramétrages et les mesures automatiques effectués par un <strong>certificateur de réseau professionnel</strong> (équipement dont l'IUT ne dispose pas directement en salle de TP). Ce projet en <strong>binôme</strong> s'est articulé autour de l'étude concrète de deux supports physiques fondamentaux en R&T : les <strong>câbles en cuivre</strong> et la <strong>fibre optique</strong>.</p>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Travail demandé et manipulations techniques</h3>
+                <p>Le projet comprenait une <strong>double approche</strong> : une phase pratique de <strong>métrologie en laboratoire</strong> et une <strong>étude documentaire approfondie</strong>.</p>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">1. Caractérisation et métrologie des supports Cuivre</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Mesures DTF (Distance to Fault) :</strong> Utilisation d'un analyseur de réseau spécifique pour cartographier l'état interne de câbles coaxiaux (type <strong>RG58, NVP = 66</strong>) et de câbles <strong>Ethernet</strong>. L'objectif était de détecter la distance exacte d'un défaut (coupure ou court-circuit) ou d'en déterminer la longueur totale inconnue</li>
+                    <li style="margin-top: 10px;"><strong>Régime impulsionnel (Étalonnage & Réflectométrie) :</strong> À l'aide d'un <strong>Générateur de Basses Fréquences (GBF)</strong> et d'un <strong>oscilloscope</strong>, observation du déplacement et de la réflexion d'une onde impulsionnelle de tension dans un câble</li>
+                    <li style="margin-top: 10px;"><strong>Calcul de la NVP (Nominal Velocity of Propagation) :</strong> À partir d'un câble Ethernet étalon de référence de 2 mètres, application d'une méthode de calcul mathématique (développée en TD) pour définir la vitesse de propagation propre au câble assigné, afin de corroborer la longueur mesurée par l'analyseur DTF</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">2. Qualification et photométrie sur Fibre Optique</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Câblage de liaison :</strong> Réalisation et interconnexion d'une liaison fibrée spécifique de type <strong>FTTH (Fiber To The Home)</strong></li>
+                    <li style="margin-top: 10px;"><strong>Mesure de photométrie :</strong> Manipulation de sources optiques et de photomètres pour mesurer précisément l'<strong>affaiblissement</strong> et qualifier l'<strong>atténuation globale</strong> de la liaison en décibels (<strong>dB / dBm</strong>)</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3. Ingénierie documentaire et Certification</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Analyse des documents constructeurs :</strong> Comprendre les processus métiers de certification des supports de transmission selon les normes</li>
+                    <li style="margin-top: 10px;"><strong>Rédaction d'une fiche de synthèse :</strong> Regroupement manuscrit de l'ensemble des formules clés (calculs de dB, dBm, coefficients de réflexion, paradiaphonie/NEXT, télédiaphonie/PSNEXT) autorisée lors de l'évaluation finale</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Livrables et Évaluations</h3>
+                <p>Le projet a fait l'objet de <strong>trois évaluations distinctes</strong> :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Rapport Technique Cuivre (Format A4) :</strong> Compte-rendu scientifique détaillant les relevés de temps de parcours, le calcul de la <strong>NVP</strong> et l'identification de la distance au défaut sur le câble coaxial et Ethernet attribué</li>
+                    <li style="margin-top: 10px;"><strong>Rapport Technique Fibre Optique (Format A4) :</strong> Analyse mathématique et graphique de l'<strong>affaiblissement</strong> de la liaison <strong>FTTH</strong> mesurée par photométrie</li>
+                    <li style="margin-top: 10px;"><strong>Contrôle de connaissances (QCM Ecampus) :</strong> Validation individuelle finale portant sur la théorie des lignes, les calculs de puissance en <strong>dB/dBm</strong>, l'analyse des réflexions et les phénomènes de diaphonie</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Ressources et compétences transversales mobilisées</h3>
+                <p>Cette SAÉ a nécessité la mise en œuvre et la synergie de nombreuses matières scientifiques et techniques du <strong>Tronc Commun</strong> :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>R1.07 (Fondamentaux de la programmation) :</strong> Pour l'automatisation éventuelle de certains calculs de mesures</li>
+                    <li style="margin-top: 10px;"><strong>R1.08 (Bases des systèmes d'exploitation) :</strong> Pour la manipulation et la gestion des fichiers de rapports</li>
+                    <li style="margin-top: 10px;"><strong>R1.11 (Expression-Culture-Communication) :</strong> Pour la rigueur de rédaction professionnelle des rapports de mesures</li>
+                </ul>
                 <div class="deliverables">
-                    <h4>Compétences visées :</h4>
+
                     <ul class="check-list">
-                        <li>Installer et configurer des machines virtuelles.</li>
-                        <li>Déployer des services en conteneur.</li>
-                        <li>Assurer la supervision et le suivi.</li>
-                        <li>Documenter les procédures de déploiement.</li>
+
                     </ul>
                 </div>
             </div>
@@ -64,24 +105,29 @@
                 <span class="icon"><i class="fa-solid fa-server" aria-label="Réalisations techniques"></i></span>
                 <h2>Réalisations techniques</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Présentation de l'environnement déployé et des services disponibles.</p>
+            <p style="margin-bottom: 20px; color: #475569;">Présentation de l'environnement déployé et des services
+                disponibles.</p>
             <div class="project-grid">
                 <div class="card">
                     <div class="card-header">Infrastructure VM</div>
                     <div class="card-body">
-                        <div style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
+                        <div
+                            style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
                             <p style="color: var(--primary); font-size: 0.8rem;">[Diagramme VM]</p>
                         </div>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Configuration des machines virtuelles et du réseau interne pour l'hébergement des services.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Configuration des machines virtuelles et du
+                            réseau interne pour l'hébergement des services.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">Conteneurs & Services</div>
                     <div class="card-body">
-                        <pre style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
+                        <pre
+                            style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
 docker run -d --name webapp -p 8080:80 myapp:latest
                         </pre>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Déploiement d'un service web conteneurisé accessible sur le réseau local.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Déploiement d'un service web conteneurisé
+                            accessible sur le réseau local.</p>
                     </div>
                 </div>
             </div>
@@ -96,17 +142,22 @@ docker run -d --name webapp -p 8080:80 myapp:latest
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Difficultés rencontrées & Solutions</h3>
-                <p>La synchronisation des ressources entre les containers et les machines virtuelles était parfois délicate. <strong>Solution :</strong> j'ai standardisé les volumes et les variables d'environnement pour garantir un comportement prédictible.</p>
+                <p>La synchronisation des ressources entre les containers et les machines virtuelles était parfois
+                    délicate. <strong>Solution :</strong> j'ai standardisé les volumes et les variables d'environnement
+                    pour garantir un comportement prédictible.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
                 <p>J'ai développé mes compétences sur la gestion des infrastructures virtualisées :</p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC13.01 :</strong> Déployer et administrer des services virtuels.</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC13.04 :</strong> Assurer la disponibilité d'une infrastructure.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC13.01 :</strong> Déployer et administrer des services
+                        virtuels.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC13.04 :</strong> Assurer la disponibilité d'une
+                        infrastructure.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Je trouve que l'environnement est stable et adapté aux tests. Pour progresser, je souhaite intégrer une solution de monitoring centralisé.</p>
+                <p>Je trouve que l'environnement est stable et adapté aux tests. Pour progresser, je souhaite intégrer
+                    une solution de monitoring centralisé.</p>
             </div>
         </section>
 
@@ -116,13 +167,16 @@ docker run -d --name webapp -p 8080:80 myapp:latest
 
     <footer class="sae-footer">
         <p>&copy; 2026 Iban Leconte - IUT Caen Normandie</p>
-        
+
         <ul class="social-links">
-            <li><a href="https://github.com/iban18" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/iban-leconte-3233163b8/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/iban18" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                        class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/iban-leconte-3233163b8/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>

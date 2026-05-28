@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SAÉ 1.05 - Portfolio Iban Leconte</title>
-    
+
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Space+Mono&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body class="sae-page">
 
     <nav class="glass-nav">
@@ -44,14 +47,51 @@
                 <h2>Contexte et Objectifs</h2>
             </div>
             <div class="path-card">
-                <p>Pour cette SAÉ, je devais automatiser le traitement de données provenant de plusieurs sources afin de produire des rapports exploitables. Le projet demandait de garantir la qualité des données et de faciliter leur exploitation pour un usage métier.</p>
+                <h3 style="color: var(--primary); margin-bottom: 12px;"> Présentation générale</h3>
+                <p>Réalisée au cours de l'année universitaire <strong>2025-2026</strong> au sein du département <strong>Réseaux et Télécommunications</strong> de l'IUT Grand Ouest Normandie (Campus de Caen/Ifs), la <strong>SAÉ 1.05 (Traiter des données)</strong> est un projet de développement logiciel complet encadré par M. Pépin et M. Brisacier.</p>
+
+                <p style="margin-top: 12px;">Ce projet s'inscrit dans une problématique professionnelle concrète : un administrateur Réseaux & Télécoms doit régulièrement <strong>automatiser la collecte, le traitement et la mise en forme</strong> de données brutes issues de différents systèmes d'information (état d'un parc de machines, logs, données utilisateurs) afin de générer des <strong>synthèses exploitables</strong>.</p>
+
+                <p style="margin-top: 12px;">L'objectif principal de cette SAÉ était de concevoir une <strong>suite d'outils en Python (version 3.11)</strong> permettant d'interagir avec des services distants via des <strong>API REST</strong>, de manipuler des structures de données complexes (<strong>JSON / XML</strong>), puis de générer automatiquement des <strong>rapports statistiques</strong> aux formats <strong>Markdown et HTML</strong>.</p>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Travail demandé et livrables techniques</h3>
+                <p>Le projet était articulé autour de <strong>trois grandes phases de développement</strong>, menées en autonomie par binôme :</p>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">1. Module de conversion universel (md_to_html.py)</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>•</strong> Implémentation d'une fonction logicielle <strong>convert</strong> s'appuyant sur la bibliothèque <strong>markdown</strong> pour transformer un fichier source <strong>.md</strong> en page web <strong>.html</strong> valide</li>
+                    <li style="margin-top: 8px;"><strong>•</strong> Conception d'une <strong>interface en ligne de commande (CLI)</strong> pour rendre le script exécutable directement depuis un terminal (avec l'utilisation bonus du module <strong>argparse</strong> pour la gestion des arguments)</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">2. Générateur de fiches de points d'intérêt (fiche_osm.py)</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Collecte :</strong> Requêter l'API REST officielle d'<strong>OpenStreetMap (v0.6)</strong> afin de récupérer, au format JSON, l'ensemble des descripteurs bruts d'un nœud spécifique à partir de son identifiant (ex: le kebab Délices Magic Beau Gosse, nœud 5553036408)</li>
+                    <li style="margin-top: 10px;"><strong>Traitement & Export :</strong> Parser le dictionnaire Python obtenu pour structurer automatiquement les données utiles (nom, horaires, coordonnées, téléphone, site web) sous forme de fiches <strong>Markdown et HTML</strong> propres</li>
+                    <li style="margin-top: 10px;"><strong>Cartographie dynamique [Exclusivité Initiaux] :</strong> Intégration d'une fonction <strong>generate_map</strong> exploitant l'API <strong>Slippy Map</strong>. Le script devait calculer mathématiquement les coordonnées (x, y) d'une tuile cartographique selon un niveau de zoom donné, télécharger l'image correspondante, et utiliser la bibliothèque <strong>Pillow</strong> pour y superposer un marqueur visuel avant de l'injecter dans le rapport</li>
+                </ul>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3. Analyseur de zones géographiques et statistiques (infos_locales.py)</h4>
+
+                <h4 style="color: var(--primary); margin-top: 18px; margin-bottom: 10px; font-size: 0.95rem;">3. Analyseur de zones géographiques et statistiques (infos_locales.py)</h4>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>Extraction de masse :</strong> Utilisation de l'API <strong>Overpass</strong> et du langage de requêtage <strong>Overpass QL</strong> pour extraire massivement un ensemble d'objets spécifiques (ex: les restaurants et fast-foods) sur un secteur géographique délimité (Caen et Ifs)</li>
+                    <li style="margin-top: 10px;"><strong>Moteur statistique :</strong> Écriture d'algorithmes de tri et de calcul pour produire des indicateurs pertinents (ex: proportion d'établissements proposant de la vente à emporter, taux de remplissage des horaires d'ouverture sur OSM, part des pizzerias/kebabs, accessibilité PMR)</li>
+                    <li style="margin-top: 10px;"><strong>Restitution :</strong> Génération automatique d'un rapport de synthèse complet incluant les <strong>métadonnées techniques</strong> de la requête, les <strong>statistiques calculées</strong> et l'<strong>annuaire complet</strong> des lieux trouvés</li>
+                </ul>
+
+                <h3 style="color: var(--primary); margin-top: 25px; margin-bottom: 12px;"> Compétences transversales mobilisées</h3>
+                <p>Au-delà du développement pur en Python, cette SAÉ a nécessité la synergie de nombreuses ressources du <strong>tronc commun</strong> de notre formation :</p>
+                <ul style="list-style: none; padding-left: 0;">
+                    <li><strong>R107 (Fondamentaux de la programmation) & R109 (Web) :</strong> Manipulation des structures complexes (listes imbriquées, dictionnaires) et génération de code HTML sémantique et valide</li>
+                    <li style="margin-top: 10px;"><strong>R108 (Bases des OS) :</strong> Exécution et automatisation de scripts via le terminal en ligne de commande</li>
+                    <li style="margin-top: 10px;"><strong>R115 (Gestion de projet 1) :</strong> Organisation du travail en binôme, respect d'un cahier des charges strict et gestion des jalons (points d'étape à mi-parcours)</li>
+                </ul>
+
+                <p style="margin-top: 15px;">L'<strong>évaluation finale</strong> reposait sur la <strong>qualité algorithmique</strong> du code rendu, la <strong>rigueur de sa documentation</strong>, ainsi qu'une <strong>soutenance orale</strong> visant à valider la maîtrise et la compréhension complète des scripts développés.</p>
                 <div class="deliverables">
-                    <h4>Compétences visées :</h4>
+
                     <ul class="check-list">
-                        <li>Analyser un besoin fonctionnel.</li>
-                        <li>Écrire des scripts d'automatisation fiables.</li>
-                        <li>Assurer la qualité des données importées.</li>
-                        <li>Documenter la solution et son usage.</li>
+
                     </ul>
                 </div>
             </div>
@@ -64,24 +104,29 @@
                 <span class="icon"><i class="fa-solid fa-laptop-code" aria-label="Réalisations techniques"></i></span>
                 <h2>Réalisations techniques</h2>
             </div>
-            <p style="margin-bottom: 20px; color: #475569;">Aperçu de la solution automatisée et des résultats obtenus.</p>
+            <p style="margin-bottom: 20px; color: #475569;">Aperçu de la solution automatisée et des résultats obtenus.
+            </p>
             <div class="project-grid">
                 <div class="card">
                     <div class="card-header">Pipeline de données</div>
                     <div class="card-body">
-                        <div style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
+                        <div
+                            style="background: #eef2f7; border: 1px dashed var(--primary); height: 200px; display:flex; align-items:center; justify-content:center; border-radius:8px; text-align:center; padding: 10px;">
                             <p style="color: var(--primary); font-size: 0.8rem;">[Schéma du flux ETL]</p>
                         </div>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Création d'un pipeline qui nettoie, transforme et agrège les données selon le cahier des charges.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Création d'un pipeline qui nettoie, transforme
+                            et agrège les données selon le cahier des charges.</p>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-header">Validation & Exports</div>
                     <div class="card-body">
-                        <pre style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
+                        <pre
+                            style="background: #1a1a1a; color: #ff79c6; padding: 15px; font-size: 0.75rem; border-radius: 5px; overflow-x: auto; font-family: 'Space Mono', monospace;">
 python process_data.py --input data.csv --output report.xlsx
                         </pre>
-                        <p style="font-size: 0.9rem; margin-top: 15px;">Génération de résultats exploitables et d'un rapport final automatisé.</p>
+                        <p style="font-size: 0.9rem; margin-top: 15px;">Génération de résultats exploitables et d'un
+                            rapport final automatisé.</p>
                     </div>
                 </div>
             </div>
@@ -96,17 +141,24 @@ python process_data.py --input data.csv --output report.xlsx
             </div>
             <div class="path-card" style="border-left: 5px solid var(--primary);">
                 <h3>Difficultés rencontrées & Solutions</h3>
-                <p>J'ai d'abord eu du mal à harmoniser les différentes structures de fichiers sources. <strong>Solution :</strong> j'ai mis en place un script de normalisation et une validation automatique des formats.</p>
+                <p>J'ai d'abord eu du mal à harmoniser les différentes structures de fichiers sources. <strong>Solution
+                        :</strong> j'ai mis en place un script de normalisation et une validation automatique des
+                    formats.</p>
 
                 <h3 style="margin-top: 25px;">Apprentissages Critiques (AC) validés</h3>
-                <p>Ce projet m'a permis de renforcer mon savoir-faire sur l'automatisation et la fiabilité des données :</p>
+                <p>Ce projet m'a permis de renforcer mon savoir-faire sur l'automatisation et la fiabilité des données :
+                </p>
                 <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;">✅ <strong>AC12.03 :</strong> Développer une solution logicielle automatisée.</li>
-                    <li style="margin-bottom: 10px;">✅ <strong>AC12.07 :</strong> Assurer la qualité des données et la conformité.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC12.03 :</strong> Développer une solution logicielle
+                        automatisée.</li>
+                    <li style="margin-bottom: 10px;">✅ <strong>AC12.07 :</strong> Assurer la qualité des données et la
+                        conformité.</li>
                 </ul>
 
                 <h3 style="margin-top: 25px;">Auto-évaluation</h3>
-                <p>Le principal point fort est l'automatisation du processus, qui réduit les erreurs manuelles. Pour une prochaine étape, je souhaite ajouter une interface de suivi pour visualiser l'état des traitements.</p>
+                <p>Le principal point fort est l'automatisation du processus, qui réduit les erreurs manuelles. Pour une
+                    prochaine étape, je souhaite ajouter une interface de suivi pour visualiser l'état des traitements.
+                </p>
             </div>
         </section>
 
@@ -116,13 +168,16 @@ python process_data.py --input data.csv --output report.xlsx
 
     <footer class="sae-footer">
         <p>&copy; 2026 Iban Leconte - IUT Caen Normandie</p>
-        
+
         <ul class="social-links">
-            <li><a href="https://github.com/iban18" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fab fa-github"></i></a></li>
-            <li><a href="https://www.linkedin.com/in/iban-leconte-3233163b8/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
+            <li><a href="https://github.com/iban18" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                        class="fab fa-github"></i></a></li>
+            <li><a href="https://www.linkedin.com/in/iban-leconte-3233163b8/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn"><i class="fab fa-linkedin"></i></a></li>
         </ul>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
