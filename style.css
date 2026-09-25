@@ -141,12 +141,18 @@ nav {
 .project-scroll::-webkit-scrollbar { height: 10px; }
 .project-scroll::-webkit-scrollbar-track { background: transparent; }
 .project-scroll::-webkit-scrollbar-thumb { background: rgba(99, 102, 241, 0.35); border-radius: 999px; }
+
+/* NOUVEAU : Alignement des cartes avec Flexbox */
 .card {
     background: white;
     border-radius: 12px;
     overflow: hidden;
     border: 1px solid var(--border);
     transition: transform 0.3s, box-shadow 0.3s;
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 /* Video inside project cards */
@@ -164,7 +170,15 @@ nav {
 }
 .card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(99, 102, 241, 0.15); }
 .card-header { background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%); color: white; padding: 15px 20px; font-family: 'Space Mono', monospace; font-weight: 600; }
-.card-body { padding: 20px; }
+
+/* NOUVEAU : Le corps de la carte prend tout l'espace disponible */
+.card-body { 
+    padding: 20px; 
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
 .tags { margin: 15px 0; }
 .tags span {
     background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, rgba(139, 92, 246, 0.1) 100%);
@@ -184,6 +198,11 @@ nav {
     transition: 0.3s;
 }
 .link-btn:hover { color: var(--secondary); }
+
+/* NOUVEAU : Pousse le bouton d'analyse en bas de la carte */
+.card-body .link-btn {
+    margin-top: auto !important;
+}
 
 /* Boutons */
 .btn {
